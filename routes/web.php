@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\View;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('offers/', [OffersController::class, 'index'])->name('offers');
+Route::get('privacy/',[PrivacyController::class, 'index'])->name('privacy');
+Route::get('terms/',[PrivacyController::class, 'terms'])->name('terms');
 // Route::get('/rooms/executive', [RoomsController::class, 'executive'])->name('rooms/executive');
 // Route::get('/rooms/junior', [RoomsController::class, 'junior'])->name('rooms/junior');
 // Route::get('/rooms/ocean', [RoomsController::class, 'ocean'])->name('rooms/ocean');
@@ -22,10 +24,9 @@ Route::get('offers/', [OffersController::class, 'index'])->name('offers');
 Route::get('{id}', [PageContentController::class, 'index']);
 Route::get('gallery/main', [GalleryController::class, 'main'])->name('gallery/main');
 Route::get('contact/details', [ContactController::class, 'details'])->name('contact/details');
-Route::get('privacy/',[PrivacyController::class, 'index'])->name('privacy');
-Route::get('terms/',[PrivacyController::class, 'terms'])->name('terms');
 Route::get('blog/all',[BlogController::class, 'index'])->name('blog');
 Route::get('blog/read/{slug}',[BlogController::class, 'read'])->name('read');
+
 
 
 
