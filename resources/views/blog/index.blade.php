@@ -36,7 +36,7 @@
                                     <h1>Blog</h1>
                                     <div class="orange-brand"></div>
                                     
-                                    <div style=" font-size: 1.3em;">From the maagiri blog</div>
+                                    <div style=" font-size: 1.3em;">Latest Updates, Events & Experiences</div>
                                 </div>
                             </div>
                             <div class="col-md-2"></div>
