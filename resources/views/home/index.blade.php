@@ -229,7 +229,7 @@
                             <h2>{{ $dn->name }}</h2>
                             <div class="orange-brand"></div>
                             {!! $dn->details !!}
-                            <a href="{{ url('dining/curve') }}" class="btn btn-orange-brand">EXPLORE</a>
+                            <a href="{{ url('faru') }}" class="btn btn-orange-brand">EXPLORE</a>
                         </div>
                         <div class="col-md-6 parent">
                             <div class = "image" style="background-image:url({{ asset('storage/d/'.$dn->file) }});"></div>
@@ -242,7 +242,7 @@
                             <h2>{{ $dn->name }}</h2>
                             <div class="orange-brand"></div>
                             {!! $dn->details !!}
-                            <a href="{{ url('dining/curve') }}" class="btn btn-orange-brand">EXPLORE</a>
+                            <a href="{{ url('coffee_curve') }}" class="btn btn-orange-brand">EXPLORE</a>
                         </div>
                         @endif
                     </div>
@@ -261,7 +261,7 @@
                                 <h2>{{ $dn->name }}</h2>
                                 <div class="orange-brand"></div>
                                 {!! $dn->details !!}
-                                <a href="{{ url('dining/curve') }}" class="btn btn-orange-brand">EXPLORE</a>
+                                <a href="{{ url('coffee_curve') }}" class="btn btn-orange-brand">EXPLORE</a>
                             </div>
                         </div>
                         <div class="spacer-2x"></div>
@@ -329,7 +329,7 @@
                                 <h2>{{ $ev->name }}</h2>
                                 <div class="orange-brand"></div>
                                 {!! $ev->details !!}
-                                <a href="{{ url('events/wedding') }}" class="btn btn-orange-brand">EXPLORE</a>
+                                <a href="{{ url('events_meetings') }}" class="btn btn-orange-brand">EXPLORE</a>
                             </div>
                         </div>
                         <div class="spacer-2x"></div>
@@ -367,7 +367,7 @@
                             <h2>{{ $wl->name }}</h2>
                             <div class="orange-brand"></div>
                             {!! $wl->details !!}
-                            <a href="{{ url('wellness/gym') }}" class="btn btn-orange-brand">EXPLORE</a>
+                            <a href="{{ url('fitness_gym') }}" class="btn btn-orange-brand">EXPLORE</a>
                         </div>
                     </div>
                     @endforeach
