@@ -79,7 +79,7 @@
                                 <img class="card-img-top" src="{{ asset('storage/'.$blog->image) }}" alt="{{ $blog->name }}" style=" margin-bottom:40px;">
                                     <h1>{{ $blog->title }}</h1>
                                     <div class="orange-brand"></div>
-                                    <p style="direction: ltr; text-align:left; font-weight:normal; font-size:17px;">{!! $blog->content !!}</p>
+                                    <p style="text-align:center; font-weight:normal; font-size:17px;">{!! $blog->content !!}</p>
                                     <!-- <div class="breads">28m <span>/</span> 6 to 9 Floor <span>/</span> Sea View <span>/</span> King Size Bed <span>/</span> Max 2 Adults</div> -->
                                 </div>
                             </div>
