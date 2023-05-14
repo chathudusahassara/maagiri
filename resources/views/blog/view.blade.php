@@ -30,7 +30,7 @@
 
 
 <section id="header">
-                    <div class="container-fluid page-head-banner" style="background-image:url({{ asset("storage/".$blog->image) }});">
+                    <div class="container-fluid " style="background-image:url({{ asset("storage/".$blog->image) }});">
                         
 
                         <!-- sticky menu -->
@@ -76,6 +76,7 @@
                             <div class="col-md-2"></div>
                             <div class="col-md-8">
                                 <div class="text-wrapper-main">
+                                <img class="card-img-top" src="{{ asset('storage/'.$blog->image) }}" alt="{{ $blog->name }}" style=" margin-bottom:40px;">
                                     <h1>{{ $blog->title }}</h1>
                                     <div class="orange-brand"></div>
                                     <p style="direction: ltr; text-align:left; font-weight:normal; font-size:17px;">{!! $blog->content !!}</p>
