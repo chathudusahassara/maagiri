@@ -524,5 +524,16 @@ window.sr=ScrollReveal(),sr.reveal(".dine"),sr.reveal(".event"),sr.reveal(".head
         gtag('config', 'AW-801728296');
         </script>
 
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWLTPZJJYC">
+        </script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HWLTPZJJYC');
+        </script>
+
 
 </html>
