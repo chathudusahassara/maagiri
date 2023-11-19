@@ -1,7 +1,7 @@
-{{ $type }} Enquiry <br>
+{{ $enquireData['type'] }} Enquiry <br>
 -----------------------
 <br>
 
-Name : {{ $name }} <br>
-Email : {{ $email }} <br>
-Message : {{ $messageBody }}
+Name : {{ $enquireData['name'] }} <br>
+Email : {{ $enquireData['email'] }} <br>
+Message : {{ $enquireData['messageBody'] }}

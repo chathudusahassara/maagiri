@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Mail\SendContact;
+use App\Mail\SendEnquire;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -33,6 +34,21 @@ class ContactController extends Controller
 
         return view('notifications.booking-success');
 
+    }//
+
+
+    public function SendEnquireFn(Request $request){
+
+        $enquireData = array(
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'messageBody' => $request->input('messageBody'),
+            'type' => $request->input('type'),
+        );
+
+        Mail::to('reservations@maagirihotel.com')->send(new SendEnquire($enquireData));
+
+        return "OK";
     }//
 
 

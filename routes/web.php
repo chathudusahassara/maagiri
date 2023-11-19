@@ -30,7 +30,7 @@ Route::get('blog/read/{slug}',[BlogController::class, 'read'])->name('read');
 
 // Route::post('bookings/send','BookingController@sendBookingFn')->name('bookings/send');
 // Route::post('newsletter/send','NewsletterController@SendNewsletterFn')->name('newsletter/send');
-// Route::post('enquiry/send','EnquireController@SendEnquireFn')->name('enquiry/send');
+Route::post('enquiry/send', [ContactController::class, 'SendEnquireFn'])->name('enquiry/send');
 Route::post('contact/send',[ContactController::class, 'sendContactFn'])->name('contact/send');
 
 
