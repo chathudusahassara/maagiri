@@ -28,6 +28,11 @@ Route::get('blog/all',[BlogController::class, 'index'])->name('blog');
 Route::get('blog/read/{slug}',[BlogController::class, 'read'])->name('read');
 
 
+// Route::post('bookings/send','BookingController@sendBookingFn')->name('bookings/send');
+// Route::post('newsletter/send','NewsletterController@SendNewsletterFn')->name('newsletter/send');
+// Route::post('enquiry/send','EnquireController@SendEnquireFn')->name('enquiry/send');
+Route::post('contact/send',[ContactController::class, 'sendContactFn'])->name('contact/send');
+
 
 
 View::composer('_shared.main', function($view){

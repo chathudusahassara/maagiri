@@ -17,15 +17,15 @@ class ContactController extends Controller
     }//
 
 
-    public function sendContactFn(){
+    public function sendContactFn(Request $request){
 
         $contactData = array(
-            'firstname' => Input::get('firstname'),
-            'lastname' => Input::get('lastname'),
-            'email' => Input::get('email'),
-            'mobile' => Input::get('mobile'),
-            'subject' => Input::get('subject'),
-            'contactmessage' => Input::get('contactmessage')
+            'firstname' => $request->input('firstname'),
+            'lastname' => $request->input('lastname'),
+            'email' => $request->input('email'),
+            'mobile' => $request->input('mobile'),
+            'subject' => $request->input('subject'),
+            'contactmessage' => $request->input('contactmessage'),
         );
 
         //Mail::send(new Notification($mailData));
