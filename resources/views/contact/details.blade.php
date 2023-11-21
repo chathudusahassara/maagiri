@@ -47,7 +47,7 @@
                            
                             <div class="row">
                  
-                                <div class="col-md-6">
+                                <div class="col-md-6" style=" font-size:22px; margin-bottom:84px;">
                                     <form id="ContactForm">
                                         <div class="form-group">
                                             <h1 style=" font-size:22px; margin-bottom:24px;">For General Inquiries</h1>
@@ -82,7 +82,7 @@
                                     </form>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6" style=" font-size:22px; margin-bottom:24px;">
                                     <form id="room_ContactForm">
                                         <div class="form-group">
                                             <h1 style=" font-size:22px; margin-bottom:24px;">For Room Inquiries</h1>
