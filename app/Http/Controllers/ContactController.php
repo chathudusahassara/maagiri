@@ -30,7 +30,7 @@ class ContactController extends Controller
         );
 
         //Mail::send(new Notification($mailData));
-        Mail::to('shamoonis@gmail.com')->send(new SendContact($contactData));
+        Mail::to('info@maagirihotel.com')->send(new SendContact($contactData));
 
         return view('notifications.booking-success');
 
@@ -49,7 +49,7 @@ class ContactController extends Controller
         );
 
         //Mail::send(new Notification($mailData));
-        Mail::to('shamoonis@gmail.com')->send(new SendContact($contactData));
+        Mail::to('reservations@maagirihotel.com')->send(new SendContact($contactData));
 
         return view('notifications.booking-success');
 
@@ -65,7 +65,7 @@ class ContactController extends Controller
             'type' => $request->input('type'),
         );
 
-        Mail::to('shamoonis@gmail.com')->send(new SendEnquire($enquireData));
+        Mail::to('info@maagirihotel.com')->send(new SendEnquire($enquireData));
 
         return "OK";
     }//
