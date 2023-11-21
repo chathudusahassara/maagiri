@@ -468,7 +468,200 @@
 
 
 <script>
-window.sr=ScrollReveal(),sr.reveal(".dine"),sr.reveal(".event"),sr.reveal(".heading-container");var $item=$(".carousel .carousel-item"),$wHeight=window.innerHeight-95;function openNav(){document.getElementById("mySidenav").style.width="100%",$(".overlay").show()}function closeNav(){document.getElementById("mySidenav").style.width="0",$(".overlay").hide()}$item.eq(0).addClass("active"),$item.height($wHeight),$item.addClass("full-screen"),$(".carousel img").each(function(){var e=$(this).attr("src"),o=$(this).attr("data-color");$(this).parent().css({"background-image":"url("+e+")","background-color":o}),$(this).remove()}),$(window).on("resize",function(){$wHeight=window.innerHeight-95,$item.height($wHeight)}),$(".carousel").carousel({interval:6e3,pause:"false"}),jQuery(function(e){var o=e("div.carousel-item:nth-child(1) .carousel-caption");e(".pp-caption").html(o.html()),o.css("display","none"),e(".carousel").on("slide.bs.carousel",function(o){var a=e("div.carousel-item:nth-child("+(e(o.relatedTarget).index()+1)+") .carousel-caption");e(".pp-caption").html(a.html()),a.css("display","none")})}),$(".accord").click(function(){var e=$(this);$(".accord-media",e).show(),$(".text-accort",e).fadeOut(),$(".accord .text-accort").siblings().show(),$(".text-area").hide(),$(this).hasClass("scale-up")?($(".accord-main div").removeClass("scale-up"),$(".accord-main div").removeClass("scale-down"),$(".text-accort").show(),$(".accord-contents").hide(),$(".text-area").hide()):($(".accord-main div").removeClass("scale-up"),$(".accord-main div").removeClass("scale-down"),$(this).addClass("scale-up").siblings().addClass("scale-down"),$(".accord-contents",e).show(),$(".text-area").fadeIn(2e3))}),$(".sticky-menu li a").hover(function(){});var nowDate=new Date;nowDate.setDate(nowDate.getDate()+1);var dd=nowDate.getDate(),mm=nowDate.getMonth()+1,y=nowDate.getFullYear();function init(){window.addEventListener("scroll",function(e){window.pageYOffset||document.documentElement.scrollTop;var o=document.querySelector("#bookBar");fs=document.querySelector("#bookBarContent");var a=$("#book-section").offset().top;window.pageYOffset>a?(classie.add(o,"fixed-top"),classie.remove(fs,"booking-bar-normal"),classie.add(o,"booking-bar-normal"),$(".long-space").hide(),$(".book-brand").show(),$(".burger-menu").show(),stickyMenuClose()):classie.has(o,"fixed-top")&&(classie.remove(o,"fixed-top"),classie.remove(o,"booking-bar-normal"),classie.add(fs,"booking-bar-normal"),$(".long-space").show(),$(".book-brand").hide(),$(".burger-menu").hide(),$("#bookBarContent").addClass(".booking-bar-normal"))})}function stickyMenu(){$("#bookBarContent").hide(),$(".booking-bar-nav").show(),$(".burger-menu").hide(),$(".burger-menu-close").show()}function stickyMenuClose(){$(".burger-menu").show(),$(".booking-bar-nav").hide(),$("#bookBarContent").fadeIn(),$(".burger-menu-close").hide()}function overlayMenuClose(){$("#bookin-OL").fadeOut()}function overlayMenuOpen(){$("#BookingForm").show(),$(".success-msg").hide();var e=$("#bookBarRooms").val(),o=$("#bookBarGuests").val(),a=$("#bookBarDate").val();$("#formRooms").val(e),$("#formGuests").val(o),$("#formDate").val(a),$("#bookin-OL").fadeIn()}function mobileOverlayMenuOpen(){$("#BookingForm").show(),$(".success-msg").hide();var e=$("#bookBarRooms").val(),o=$("#bookBarGuests").val(),a=$("#bookBarDate").val();$("#formRooms").val(e),$("#formGuests").val(o),$("#formDate").val(a),$("#mobile-bookin-OL").fadeIn()}function enquireOverlayOpen(){var e=$("#pageType").val();$("#type").val(e),$("#enquire-OL").fadeIn()}function enquireOverlayClose(){$("#enquire-OL").fadeOut()}function selectorAge(e){for($("#childWrapper").empty(),$i=0;$i<e;$i++){var o=$('<select class="form-control ages" name="childAge'+($i+1)+'"/>');for($p=0;$p<15;$p++)0==$p?$("<option disabled selected>Child "+($i+1)+" Age</option>").appendTo(o):$("<option value="+$p+">"+$p+" Year(s)</option>").appendTo(o);o.appendTo("#childWrapper")}}function selectorAgeMobile(e){for($("#childWrapperMobile").empty(),$i=0;$i<e;$i++){var o=$('<select class="form-control ages" name="childAge'+($i+1)+'"/>');for($p=0;$p<15;$p++)0==$p?$("<option disabled selected>Child "+($i+1)+" Age</option>").appendTo(o):$("<option value="+$p+">"+$p+" Year(s)</option>").appendTo(o);o.appendTo("#childWrapperMobile")}}$(function(){$('input[name="daterange"]').daterangepicker({autoApply:!0,autoUpdateInput:!0,locale:{cancelLabel:"Clear",format:"DD/MM/YYYY"},startDate:Date.now(),endDate:dd+"-"+mm+"-"+y}),$('input[name="daterange"]').on("apply.daterangepicker",function(e,o){$(this).val(o.startDate.format("DD/MM/YYYY")+" - "+o.endDate.format("DD/MM/YYYY")),$("#eZ_chkin").val(o.startDate.format("DD-MM-YY")),$("#eZ_chkout").val(o.endDate.format("DD-MM-YY"))}),$('input[name="daterange"]').on("cancel.daterangepicker",function(e,o){$(this).val("")})}),window.onload=init(),$("#slider").anythingSlider({expand:!0,autoPlay:!1,buildArrows:!0,buildStartStop:!1,buildNavigation:!1,appendForwardTo:null,appendBackTo:null}),$("ul.nav li.dropdown").hover(function(){$(this).find(".dropdown-menu").stop(!0,!0).delay(200).fadeIn(500)},function(){$(this).find(".dropdown-menu").stop(!0,!0).delay(200).fadeOut(500)}),$("#BookingForm").on("submit",function(e){if($("#bookName").val().length>0||$("#bookEmail").val().length>0){$("input[type=submit]").attr("disabled","disabled"),$("#submitBttn").hide(),$("#loadingBttn").fadeIn();$.ajax({type:"POST",url:"{{ url('bookings/send') }}",data:$("#BookingForm").serialize(),success:function(e){$("#BookingForm").hide(),$("#bookingMsg").fadeIn()}})}else $("#book-msg").empty(),$("#book-msg").append("<p class='msg-alert'>*Please fill all the required fields.</p>");e.preventDefault()}),$("#NewsletterForm").on("submit",function(e){$.ajax({type:"POST",url:"{{ url('newsletter/send') }}",data:$("#NewsletterForm").serialize(),success:function(e){overlayMenuOpen(),$("#BookingForm").hide(),$("#newsletter").fadeIn()}}),e.preventDefault()}),$("#enquiryForm").on("submit",function(e){$.ajax({type:"POST",url:"{{ url('enquiry/send') }}",data:$("#enquiryForm").serialize(),success:function(e){overlayMenuOpen(),$("#BookingForm").hide(),$("#enquiry").fadeIn()}}),e.preventDefault()}),$("#ContactForm").on("submit",function(e){$.ajax({type:"POST",url:"{{ url('contact/send') }}",data:$("#ContactForm").serialize(),success:function(e){overlayMenuOpen(),$("#BookingForm").hide(),$("#enquiry").fadeIn()}}),e.preventDefault()}),$(document).ready(function(){function e(){verticalOffset="undefined"!=typeof verticalOffset?verticalOffset:0,element=$("body"),offset=element.offset(),offsetTop=offset.top,$("html, body").animate({scrollTop:offsetTop},500,"linear")}$(function(){$(document).on("scroll",function(){$(window).scrollTop()>100?$(".scroll-top-wrapper").addClass("show"):$(".scroll-top-wrapper").removeClass("show")}),$(".scroll-top-wrapper").on("click",e)})}),$("#childs").on("change",function(){$childs=$("#childs").val(),selectorAge($childs)}),$("#childsMobile").on("change",function(){$childs=$("#childsMobile").val(),selectorAgeMobile($childs)});
+//window.sr=ScrollReveal(),sr.reveal(".dine"),sr.reveal(".event"),sr.reveal(".heading-container");var $item=$(".carousel .carousel-item"),$wHeight=window.innerHeight-95;function openNav(){document.getElementById("mySidenav").style.width="100%",$(".overlay").show()}function closeNav(){document.getElementById("mySidenav").style.width="0",$(".overlay").hide()}$item.eq(0).addClass("active"),$item.height($wHeight),$item.addClass("full-screen"),$(".carousel img").each(function(){var e=$(this).attr("src"),o=$(this).attr("data-color");$(this).parent().css({"background-image":"url("+e+")","background-color":o}),$(this).remove()}),$(window).on("resize",function(){$wHeight=window.innerHeight-95,$item.height($wHeight)}),$(".carousel").carousel({interval:6e3,pause:"false"}),jQuery(function(e){var o=e("div.carousel-item:nth-child(1) .carousel-caption");e(".pp-caption").html(o.html()),o.css("display","none"),e(".carousel").on("slide.bs.carousel",function(o){var a=e("div.carousel-item:nth-child("+(e(o.relatedTarget).index()+1)+") .carousel-caption");e(".pp-caption").html(a.html()),a.css("display","none")})}),$(".accord").click(function(){var e=$(this);$(".accord-media",e).show(),$(".text-accort",e).fadeOut(),$(".accord .text-accort").siblings().show(),$(".text-area").hide(),$(this).hasClass("scale-up")?($(".accord-main div").removeClass("scale-up"),$(".accord-main div").removeClass("scale-down"),$(".text-accort").show(),$(".accord-contents").hide(),$(".text-area").hide()):($(".accord-main div").removeClass("scale-up"),$(".accord-main div").removeClass("scale-down"),$(this).addClass("scale-up").siblings().addClass("scale-down"),$(".accord-contents",e).show(),$(".text-area").fadeIn(2e3))}),$(".sticky-menu li a").hover(function(){});var nowDate=new Date;nowDate.setDate(nowDate.getDate()+1);var dd=nowDate.getDate(),mm=nowDate.getMonth()+1,y=nowDate.getFullYear();function init(){window.addEventListener("scroll",function(e){window.pageYOffset||document.documentElement.scrollTop;var o=document.querySelector("#bookBar");fs=document.querySelector("#bookBarContent");var a=$("#book-section").offset().top;window.pageYOffset>a?(classie.add(o,"fixed-top"),classie.remove(fs,"booking-bar-normal"),classie.add(o,"booking-bar-normal"),$(".long-space").hide(),$(".book-brand").show(),$(".burger-menu").show(),stickyMenuClose()):classie.has(o,"fixed-top")&&(classie.remove(o,"fixed-top"),classie.remove(o,"booking-bar-normal"),classie.add(fs,"booking-bar-normal"),$(".long-space").show(),$(".book-brand").hide(),$(".burger-menu").hide(),$("#bookBarContent").addClass(".booking-bar-normal"))})}function stickyMenu(){$("#bookBarContent").hide(),$(".booking-bar-nav").show(),$(".burger-menu").hide(),$(".burger-menu-close").show()}function stickyMenuClose(){$(".burger-menu").show(),$(".booking-bar-nav").hide(),$("#bookBarContent").fadeIn(),$(".burger-menu-close").hide()}function overlayMenuClose(){$("#bookin-OL").fadeOut()}function overlayMenuOpen(){$("#BookingForm").show(),$(".success-msg").hide();var e=$("#bookBarRooms").val(),o=$("#bookBarGuests").val(),a=$("#bookBarDate").val();$("#formRooms").val(e),$("#formGuests").val(o),$("#formDate").val(a),$("#bookin-OL").fadeIn()}function mobileOverlayMenuOpen(){$("#BookingForm").show(),$(".success-msg").hide();var e=$("#bookBarRooms").val(),o=$("#bookBarGuests").val(),a=$("#bookBarDate").val();$("#formRooms").val(e),$("#formGuests").val(o),$("#formDate").val(a),$("#mobile-bookin-OL").fadeIn()}function enquireOverlayOpen(){var e=$("#pageType").val();$("#type").val(e),$("#enquire-OL").fadeIn()}function enquireOverlayClose(){$("#enquire-OL").fadeOut()}function selectorAge(e){for($("#childWrapper").empty(),$i=0;$i<e;$i++){var o=$('<select class="form-control ages" name="childAge'+($i+1)+'"/>');for($p=0;$p<15;$p++)0==$p?$("<option disabled selected>Child "+($i+1)+" Age</option>").appendTo(o):$("<option value="+$p+">"+$p+" Year(s)</option>").appendTo(o);o.appendTo("#childWrapper")}}function selectorAgeMobile(e){for($("#childWrapperMobile").empty(),$i=0;$i<e;$i++){var o=$('<select class="form-control ages" name="childAge'+($i+1)+'"/>');for($p=0;$p<15;$p++)0==$p?$("<option disabled selected>Child "+($i+1)+" Age</option>").appendTo(o):$("<option value="+$p+">"+$p+" Year(s)</option>").appendTo(o);o.appendTo("#childWrapperMobile")}}$(function(){$('input[name="daterange"]').daterangepicker({autoApply:!0,autoUpdateInput:!0,locale:{cancelLabel:"Clear",format:"DD/MM/YYYY"},startDate:Date.now(),endDate:dd+"-"+mm+"-"+y}),$('input[name="daterange"]').on("apply.daterangepicker",function(e,o){$(this).val(o.startDate.format("DD/MM/YYYY")+" - "+o.endDate.format("DD/MM/YYYY")),$("#eZ_chkin").val(o.startDate.format("DD-MM-YY")),$("#eZ_chkout").val(o.endDate.format("DD-MM-YY"))}),$('input[name="daterange"]').on("cancel.daterangepicker",function(e,o){$(this).val("")})}),window.onload=init(),$("#slider").anythingSlider({expand:!0,autoPlay:!1,buildArrows:!0,buildStartStop:!1,buildNavigation:!1,appendForwardTo:null,appendBackTo:null}),$("ul.nav li.dropdown").hover(function(){$(this).find(".dropdown-menu").stop(!0,!0).delay(200).fadeIn(500)},function(){$(this).find(".dropdown-menu").stop(!0,!0).delay(200).fadeOut(500)}),$("#BookingForm").on("submit",function(e){if($("#bookName").val().length>0||$("#bookEmail").val().length>0){$("input[type=submit]").attr("disabled","disabled"),$("#submitBttn").hide(),$("#loadingBttn").fadeIn();$.ajax({type:"POST",url:"{{ url('bookings/send') }}",data:$("#BookingForm").serialize(),success:function(e){$("#BookingForm").hide(),$("#bookingMsg").fadeIn()}})}else $("#book-msg").empty(),$("#book-msg").append("<p class='msg-alert'>*Please fill all the required fields.</p>");e.preventDefault()}),$("#NewsletterForm").on("submit",function(e){$.ajax({type:"POST",url:"{{ url('newsletter/send') }}",data:$("#NewsletterForm").serialize(),success:function(e){overlayMenuOpen(),$("#BookingForm").hide(),$("#newsletter").fadeIn()}}),e.preventDefault()}),$("#enquiryForm").on("submit",function(e){$.ajax({type:"POST",url:"{{ url('enquiry/send') }}",data:$("#enquiryForm").serialize(),success:function(e){overlayMenuOpen(),$("#BookingForm").hide(),$("#enquiry").fadeIn()}}),e.preventDefault()}),$("#ContactForm").on("submit",function(e){$.ajax({type:"POST",url:"{{ url('contact/send') }}",data:$("#ContactForm").serialize(),success:function(e){overlayMenuOpen(),$("#BookingForm").hide(),$("#enquiry").fadeIn()}}),e.preventDefault()}),$(document).ready(function(){function e(){verticalOffset="undefined"!=typeof verticalOffset?verticalOffset:0,element=$("body"),offset=element.offset(),offsetTop=offset.top,$("html, body").animate({scrollTop:offsetTop},500,"linear")}$(function(){$(document).on("scroll",function(){$(window).scrollTop()>100?$(".scroll-top-wrapper").addClass("show"):$(".scroll-top-wrapper").removeClass("show")}),$(".scroll-top-wrapper").on("click",e)})}),$("#childs").on("change",function(){$childs=$("#childs").val(),selectorAge($childs)}),$("#childsMobile").on("change",function(){$childs=$("#childsMobile").val(),selectorAgeMobile($childs)});
+window.sr = ScrollReveal(), sr.reveal(".dine"), sr.reveal(".event"), sr.reveal(".heading-container");
+var $item = $(".carousel .carousel-item"),
+    $wHeight = window.innerHeight - 95;
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%", $(".overlay").show()
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0", $(".overlay").hide()
+}
+$item.eq(0).addClass("active"), $item.height($wHeight), $item.addClass("full-screen"), $(".carousel img").each(function() {
+    var e = $(this).attr("src"),
+        o = $(this).attr("data-color");
+    $(this).parent().css({
+        "background-image": "url(" + e + ")",
+        "background-color": o
+    }), $(this).remove()
+}), $(window).on("resize", function() {
+    $wHeight = window.innerHeight - 95, $item.height($wHeight)
+}), $(".carousel").carousel({
+    interval: 6e3,
+    pause: "false"
+}), jQuery(function(e) {
+    var o = e("div.carousel-item:nth-child(1) .carousel-caption");
+    e(".pp-caption").html(o.html()), o.css("display", "none"), e(".carousel").on("slide.bs.carousel", function(o) {
+        var a = e("div.carousel-item:nth-child(" + (e(o.relatedTarget).index() + 1) + ") .carousel-caption");
+        e(".pp-caption").html(a.html()), a.css("display", "none")
+    })
+}), $(".accord").click(function() {
+    var e = $(this);
+    $(".accord-media", e).show(), $(".text-accort", e).fadeOut(), $(".accord .text-accort").siblings().show(), $(".text-area").hide(), $(this).hasClass("scale-up") ? ($(".accord-main div").removeClass("scale-up"), $(".accord-main div").removeClass("scale-down"), $(".text-accort").show(), $(".accord-contents").hide(), $(".text-area").hide()) : ($(".accord-main div").removeClass("scale-up"), $(".accord-main div").removeClass("scale-down"), $(this).addClass("scale-up").siblings().addClass("scale-down"), $(".accord-contents", e).show(), $(".text-area").fadeIn(2e3))
+}), $(".sticky-menu li a").hover(function() {});
+var nowDate = new Date;
+nowDate.setDate(nowDate.getDate() + 1);
+var dd = nowDate.getDate(),
+    mm = nowDate.getMonth() + 1,
+    y = nowDate.getFullYear();
+
+function init() {
+    window.addEventListener("scroll", function(e) {
+        window.pageYOffset || document.documentElement.scrollTop;
+        var o = document.querySelector("#bookBar");
+        fs = document.querySelector("#bookBarContent");
+        var a = $("#book-section").offset().top;
+        window.pageYOffset > a ? (classie.add(o, "fixed-top"), classie.remove(fs, "booking-bar-normal"), classie.add(o, "booking-bar-normal"), $(".long-space").hide(), $(".book-brand").show(), $(".burger-menu").show(), stickyMenuClose()) : classie.has(o, "fixed-top") && (classie.remove(o, "fixed-top"), classie.remove(o, "booking-bar-normal"), classie.add(fs, "booking-bar-normal"), $(".long-space").show(), $(".book-brand").hide(), $(".burger-menu").hide(), $("#bookBarContent").addClass(".booking-bar-normal"))
+    })
+}
+
+function stickyMenu() {
+    $("#bookBarContent").hide(), $(".booking-bar-nav").show(), $(".burger-menu").hide(), $(".burger-menu-close").show()
+}
+
+function stickyMenuClose() {
+    $(".burger-menu").show(), $(".booking-bar-nav").hide(), $("#bookBarContent").fadeIn(), $(".burger-menu-close").hide()
+}
+
+function overlayMenuClose() {
+    $("#bookin-OL").fadeOut()
+}
+
+function overlayMenuOpen() {
+    $("#BookingForm").show(), $(".success-msg").hide();
+    var e = $("#bookBarRooms").val(),
+        o = $("#bookBarGuests").val(),
+        a = $("#bookBarDate").val();
+    $("#formRooms").val(e), $("#formGuests").val(o), $("#formDate").val(a), $("#bookin-OL").fadeIn()
+}
+
+function mobileOverlayMenuOpen() {
+    $("#BookingForm").show(), $(".success-msg").hide();
+    var e = $("#bookBarRooms").val(),
+        o = $("#bookBarGuests").val(),
+        a = $("#bookBarDate").val();
+    $("#formRooms").val(e), $("#formGuests").val(o), $("#formDate").val(a), $("#mobile-bookin-OL").fadeIn()
+}
+
+function enquireOverlayOpen() {
+    var e = $("#pageType").val();
+    $("#type").val(e), $("#enquire-OL").fadeIn()
+}
+
+function enquireOverlayClose() {
+    $("#enquire-OL").fadeOut()
+}
+
+function selectorAge(e) {
+    for ($("#childWrapper").empty(), $i = 0; $i < e; $i++) {
+        var o = $('<select class="form-control ages" name="childAge' + ($i + 1) + '"/>');
+        for ($p = 0; $p < 15; $p++) 0 == $p ? $("<option disabled selected>Child " + ($i + 1) + " Age</option>").appendTo(o) : $("<option value=" + $p + ">" + $p + " Year(s)</option>").appendTo(o);
+        o.appendTo("#childWrapper")
+    }
+}
+
+function selectorAgeMobile(e) {
+    for ($("#childWrapperMobile").empty(), $i = 0; $i < e; $i++) {
+        var o = $('<select class="form-control ages" name="childAge' + ($i + 1) + '"/>');
+        for ($p = 0; $p < 15; $p++) 0 == $p ? $("<option disabled selected>Child " + ($i + 1) + " Age</option>").appendTo(o) : $("<option value=" + $p + ">" + $p + " Year(s)</option>").appendTo(o);
+        o.appendTo("#childWrapperMobile")
+    }
+}
+$(function() {
+    $('input[name="daterange"]').daterangepicker({
+        autoApply: !0,
+        autoUpdateInput: !0,
+        locale: {
+            cancelLabel: "Clear",
+            format: "DD/MM/YYYY"
+        },
+        startDate: Date.now(),
+        endDate: dd + "-" + mm + "-" + y
+    }), $('input[name="daterange"]').on("apply.daterangepicker", function(e, o) {
+        $(this).val(o.startDate.format("DD/MM/YYYY") + " - " + o.endDate.format("DD/MM/YYYY")), $("#eZ_chkin").val(o.startDate.format("DD-MM-YY")), $("#eZ_chkout").val(o.endDate.format("DD-MM-YY"))
+    }), $('input[name="daterange"]').on("cancel.daterangepicker", function(e, o) {
+        $(this).val("")
+    })
+}), window.onload = init(), $("#slider").anythingSlider({
+    expand: !0,
+    autoPlay: !1,
+    buildArrows: !0,
+    buildStartStop: !1,
+    buildNavigation: !1,
+    appendForwardTo: null,
+    appendBackTo: null
+}), $("ul.nav li.dropdown").hover(function() {
+    $(this).find(".dropdown-menu").stop(!0, !0).delay(200).fadeIn(500)
+}, function() {
+    $(this).find(".dropdown-menu").stop(!0, !0).delay(200).fadeOut(500)
+}), $("#BookingForm").on("submit", function(e) {
+    if ($("#bookName").val().length > 0 || $("#bookEmail").val().length > 0) {
+        $("input[type=submit]").attr("disabled", "disabled"), $("#submitBttn").hide(), $("#loadingBttn").fadeIn();
+        $.ajax({
+            type: "POST",
+            url: "{{ url('bookings/send') }}",
+            data: $("#BookingForm").serialize(),
+            success: function(e) {
+                $("#BookingForm").hide(), $("#bookingMsg").fadeIn()
+            }
+        })
+    } else $("#book-msg").empty(), $("#book-msg").append("<p class='msg-alert'>*Please fill all the required fields.</p>");
+    e.preventDefault()
+}), $("#NewsletterForm").on("submit", function(e) {
+    $.ajax({
+        type: "POST",
+        url: "{{ url('newsletter/send') }}",
+        data: $("#NewsletterForm").serialize(),
+        success: function(e) {
+            overlayMenuOpen(), $("#BookingForm").hide(), $("#newsletter").fadeIn()
+        }
+    }), e.preventDefault()
+}), $("#enquiryForm").on("submit", function(e) {
+    $.ajax({
+        type: "POST",
+        url: "{{ url('enquiry/send') }}",
+        data: $("#enquiryForm").serialize(),
+        success: function(e) {
+            overlayMenuOpen(), $("#BookingForm").hide(), $("#enquiry").fadeIn()
+        }
+    }), e.preventDefault()
+}), $("#ContactForm").on("submit", function(e) {
+    $.ajax({
+        type: "POST",
+        url: "{{ url('contact/send') }}",
+        data: $("#ContactForm").serialize(),
+        success: function(e) {
+            overlayMenuOpen(), $("#BookingForm").hide(), $("#enquiry").fadeIn()
+        }
+    }), e.preventDefault()
+}), $("#room_ContactForm").on("submit", function(e) {
+    $.ajax({
+        type: "POST",
+        url: "{{ url('contact/room/send') }}",
+        data: $("#room_ContactForm").serialize(),
+        success: function(e) {
+            overlayMenuOpen(), $("#BookingForm").hide(), $("#enquiry").fadeIn()
+        }
+    }), e.preventDefault()
+}), $(document).ready(function() {
+    function e() {
+        verticalOffset = "undefined" != typeof verticalOffset ? verticalOffset : 0, element = $("body"), offset = element.offset(), offsetTop = offset.top, $("html, body").animate({
+            scrollTop: offsetTop
+        }, 500, "linear")
+    }
+    $(function() {
+        $(document).on("scroll", function() {
+            $(window).scrollTop() > 100 ? $(".scroll-top-wrapper").addClass("show") : $(".scroll-top-wrapper").removeClass("show")
+        }), $(".scroll-top-wrapper").on("click", e)
+    })
+}), $("#childs").on("change", function() {
+    $childs = $("#childs").val(), selectorAge($childs)
+}), $("#childsMobile").on("change", function() {
+    $childs = $("#childsMobile").val(), selectorAgeMobile($childs)
+});
 </script>
 
 <script>

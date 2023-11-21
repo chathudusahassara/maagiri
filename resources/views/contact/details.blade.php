@@ -44,58 +44,80 @@
                         </div>
 
                         <div id="contact-form" class="container contact-form">
-                            <form id="ContactForm">
+                           
                             <div class="row">
                  
                                 <div class="col-md-6">
-  
-                                
-                                <div class="form-group">
-                                    <div class="form-holder">
-                                        <label>FIRST NAME*</label>
-                                        <input type="text" class="form-control" name="firstname" placeholder="Enter your first name" required>
-                                    </div>
-                                    <div class="form-holder">
-                                        <label>LAST NAME</label>
-                                        <input type="text" class="form-control" name="lastname" placeholder="And the last name">
-                                    </div>
-                                    <div class="form-holder">
-                                            <label>EMAIL ADDRESS*</label>
-                                            <input type="email" class="form-control" name="email" placeholder="Your email address" required>
-                                    </div>
-                                    <div class="form-holder">
-                                            <label>CONTACT NUMBER</label>
-                                            <input type="text" class="form-control" name="mobile" placeholder="Your telephone or mobile number">
-                                            {{ csrf_field() }}
-                                    </div>
-                                </div>
-                                
-
+                                    <form id="ContactForm">
+                                        <div class="form-group">
+                                            <h1 style=" font-size:22px; margin-bottom:24px;">For General Inquiries</h1>
+                                            <div class="form-holder">
+                                                <label>FULL NAME*</label>
+                                                <input type="text" class="form-control" name="firstname" placeholder="Enter your first name" required>
+                                            </div>
+                                            <!-- <div class="form-holder">
+                                                <label>LAST NAME</label>
+                                                <input type="text" class="form-control" name="lastname" placeholder="And the last name">
+                                            </div> -->
+                                            <div class="form-holder">
+                                                    <label>EMAIL ADDRESS*</label>
+                                                    <input type="email" class="form-control" name="email" placeholder="Your email address" required>
+                                            </div>
+                                            <div class="form-holder">
+                                                    <label>CONTACT NUMBER</label>
+                                                    <input type="text" class="form-control" name="mobile" placeholder="Your telephone or mobile number">
+                                                    {{ csrf_field() }}
+                                            </div>
+                                            <!-- <div class="form-holder">
+                                                    <label>SUBJECT*</label>
+                                                    <input type="text" name="subject" class="form-control" placeholder="General Inquiry" required>
+                                            </div> -->
+                                            <div class="form-holder">
+                                                    <label>MESSAGE*</label>
+                                                    <textarea name="contactmessage" class="form-control" rows="5"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-orange-brand float-right btn-send">SEND</button>
+                                            <button class="btn btn-orange-brand float-right btn-clear">CLEAR</button>
+                                        </div>
+                                    </form>
                                 </div>
 
                                 <div class="col-md-6">
-                                <div class="col-md-12">
-                                                <div class="form-group">
-                                                        <div class="form-holder">
-                                                            <label>SUBJECT*</label>
-                                                            <input type="text" name="subject" class="form-control" placeholder="General Inquiry" required>
-                                                        </div>
-
-                                                        <div class="form-holder">
-                                                                <label>MESSAGE*</label>
-                                                                <textarea name="contactmessage" class="form-control" rows="10"></textarea>
-                                                            </div>
-                                                        
-                                                    </div>
-                                        
-                                        <button type="submit" class="btn btn-orange-brand float-right btn-send">SEND</button> <button class="btn btn-orange-brand float-right btn-clear">CLEAR</button> 
+                                    <form id="room_ContactForm">
+                                        <div class="form-group">
+                                            <h1 style=" font-size:22px; margin-bottom:24px;">For Room Inquiries</h1>
+                                            <div class="form-holder">
+                                                <label>FULL NAME*</label>
+                                                <input type="text" class="form-control" name="firstname" placeholder="Enter your first name" required>
+                                            </div>
+                                            <!-- <div class="form-holder">
+                                                <label>LAST NAME</label>
+                                                <input type="text" class="form-control" name="lastname" placeholder="And the last name">
+                                            </div> -->
+                                            <div class="form-holder">
+                                                    <label>EMAIL ADDRESS*</label>
+                                                    <input type="email" class="form-control" name="email" placeholder="Your email address" required>
+                                            </div>
+                                            <div class="form-holder">
+                                                    <label>CONTACT NUMBER</label>
+                                                    <input type="text" class="form-control" name="mobile" placeholder="Your telephone or mobile number">
+                                                    {{ csrf_field() }}
+                                            </div>
+                                            <!-- <div class="form-holder">
+                                                    <label>SUBJECT*</label>
+                                                    <input type="text" name="subject" class="form-control" placeholder="General Inquiry" required>
+                                            </div> -->
+                                            <div class="form-holder">
+                                                    <label>MESSAGE*</label>
+                                                    <textarea name="contactmessage" class="form-control" rows="5"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-orange-brand float-right btn-send">SEND</button>
+                                            <button class="btn btn-orange-brand float-right btn-clear">CLEAR</button>
                                         </div>
-                                        
-                                    
+                                    </form>    
                                 </div>
                          
                             </div>
-                        </form>
                         </div>
                     </div>
              </section>
