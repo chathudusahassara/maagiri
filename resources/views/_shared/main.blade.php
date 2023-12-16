@@ -228,9 +228,19 @@
                                         <a href="{{ url('gallery/main') }}"><b>{{ $m->name }}</b></a>
                                         @endif
 
+                                        @if($m->name == "Blog")
+                                        <a href="{{ url('blog/all') }}" >{{ $m->name }}</a>
+                                        @endif
+
+                                        @if($m->name == "Offers")
+                                        <a href="{{ url('offers') }}" >{{ $m->name }}</a>
+                                        @endif
+
                                         @if($m->name == "Contact")
                                         <a href="{{ url('contact/details') }}"><b>{{ $m->name }}</b></a>
                                         @endif
+
+
                                     @endif
                             </li>
                             @endforeach 
