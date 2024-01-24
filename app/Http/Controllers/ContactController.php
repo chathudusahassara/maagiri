@@ -56,6 +56,10 @@ class ContactController extends Controller
     }//
 
 
+    // General: info@maagirihotel.com
+    // Room inquiries: reservations@maagirihotel.com
+
+
     public function SendEnquireFn(Request $request){
 
         $enquireData = array(

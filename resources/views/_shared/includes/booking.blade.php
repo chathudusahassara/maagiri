@@ -84,7 +84,7 @@
                                     @endif
                                     
                                     @if($m->name == "Book Now")
-                                    <a class="nav-link dropdown-toggle active" href="https://live.ipms247.com/booking/book-rooms-11448" >{{ $m->name }}</a>
+                                    <a class="nav-link dropdown-toggle active" href="https://reservations.maagirihotel.com/booking/book-rooms-11448" >{{ $m->name }}</a>
                                     @endif
 
                                     @endif

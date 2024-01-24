@@ -59,7 +59,7 @@
                     </div>
                     <div class="mobile-booking-nav d-block d-sm-none">
                         <!-- <a href="javascript:;" onclick="overlayMenuOpen()">Book Now</a> -->
-                        <a href="https://live.ipms247.com/booking/book-rooms-11448">Book Now</a>
+                        <a href="https://reservations.maagirihotel.com/booking/book-rooms-11448">Book Now</a>
                     </div>
 
                 <div class="container-fluid base-nav">
@@ -101,7 +101,7 @@
                                     
                                     @if($m->name == "Book Now")
                                     <!-- <a class="nav-link dropdown-toggle active" href="javascript:;" onclick="overlayMenuOpen()" >{{ $m->name }}</a> -->
-                                    <a class="nav-link dropdown-toggle active" href="https://live.ipms247.com/booking/book-rooms-11448" >{{ $m->name }}</a>
+                                    <a class="nav-link dropdown-toggle active" href="https://reservations.maagirihotel.com/booking/book-rooms-11448" >{{ $m->name }}</a>
                                     @endif
 
                                     @endif
@@ -113,14 +113,19 @@
                 </div>
             </nav>
                   </header>
-
-
                           
 <div class="scroll-top-wrapper ">
-  <span class="scroll-top-inner">
+  <a class="scroll-top-inner">
     <i class="fa fa-2x fa-arrow-circle-up"></i>
   </span>
 </div>
+
+<div class="whatsapp-scroll-top-wrapper">
+  <a href="https://wa.me/9607998484" class="scroll-top-inner">
+    <i class="fa fa-2x fa fa-whatsapp"></i>
+    </a>
+</div>
+
   
 
     @yield('content')
@@ -466,7 +471,7 @@
     <script src='{{ asset('js/classie.js') }}'></script>
     <script src='{{ asset('js/jquery.anythingslider.min.js') }}'></script>
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117759127-1"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117759127-1"></script>
     
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -474,7 +479,7 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-117759127-1');
-    </script>
+    </script> -->
 
 
 <script>
@@ -737,6 +742,28 @@ $(function() {
 
         gtag('config', 'G-HWLTPZJJYC');
         </script>
+
+        <!-- Google Tag Manager -->
+
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+        })(window,document,'script','dataLayer','GTM-TC6GQL4F');</script>
+
+        <!-- End Google Tag Manager -->
+
+        <!-- Google Tag Manager (noscript) -->
+
+        <noscript><iframe src=https://www.googletagmanager.com/ns.html?id=GTM-TC6GQL4F
+
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+        <!-- End Google Tag Manager (noscript) -->
 
 
 </html>

@@ -39,7 +39,7 @@
                                 <div class="orange-brand"></div>
                                 <p class="d-none d-sm-block">{{ $off->summary }}</p>
                                 <p class="d-block d-sm-none">{{ $off->summary_mobile }}</p>
-                                <a href="{{ url('offers') }}">DETAILS</a> | <a style="color:#ccc;" href="https://live.ipms247.com/booking/book-rooms-11448">BOOK NOW</a>
+                                <a href="{{ url('offers') }}">DETAILS</a> | <a style="color:#ccc;" href="https://reservations.maagirihotel.com/booking/book-rooms-11448">BOOK NOW</a>
                             </div>
                         @endforeach
                     </div>

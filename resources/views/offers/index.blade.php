@@ -71,7 +71,7 @@
                 <div class="container">
                     <div class="row text-center">
                         <div class="col-md-12">
-                            <a href="https://live.ipms247.com/booking/book-rooms-11448" class="btn btn-orange-brand">BOOK NOW</a>
+                            <a href="https://reservations.maagirihotel.com/booking/book-rooms-11448" class="btn btn-orange-brand">BOOK NOW</a>
                         </div>
                     </div>
                 </div>
