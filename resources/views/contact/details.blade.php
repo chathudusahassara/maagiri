@@ -48,7 +48,7 @@
                             <div class="row">
                  
                                 <div class="col-md-6" style=" font-size:22px; margin-bottom:84px;">
-                                    <form id="ContactForm">
+                                    <form id="ContactForm" method="POST" action="{{url('contact/general/acknowledge')}}">
                                         <div class="form-group">
                                             <h1 style=" font-size:22px; margin-bottom:24px;">For General Inquiries</h1>
                                             <div class="form-holder">
@@ -83,7 +83,7 @@
                                 </div>
 
                                 <div class="col-md-6" style=" font-size:22px; margin-bottom:24px;">
-                                    <form id="room_ContactForm">
+                                    <form id="room_ContactForm" method="POST" action="{{url('contact/room/acknowledge')}}">
                                         <div class="form-group">
                                             <h1 style=" font-size:22px; margin-bottom:24px;">For Room Inquiries</h1>
                                             <div class="form-holder">

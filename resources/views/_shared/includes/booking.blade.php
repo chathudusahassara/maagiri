@@ -80,7 +80,7 @@
                                     @endif
 
                                     @if($m->name == "Contact")
-                                    <a class="nav-link dropdown-toggle" href="{{ url('contact/details') }}" >{{ $m->name }}</a>
+                                    <a class="nav-link dropdown-toggle" href="{{ url('contact') }}" >{{ $m->name }}</a>
                                     @endif
                                     
                                     @if($m->name == "Book Now")

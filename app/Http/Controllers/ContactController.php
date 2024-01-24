@@ -51,6 +51,7 @@ class ContactController extends Controller
         //Mail::send(new Notification($mailData));
         Mail::to('reservations@maagirihotel.com')->send(new SendContact($contactData));
 
+
         return view('notifications.booking-success');
 
     }//

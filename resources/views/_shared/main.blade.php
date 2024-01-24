@@ -92,7 +92,7 @@
                                     @endif
 
                                     @if($m->name == "Contact")
-                                    <a class="nav-link dropdown-toggle" href="{{ url('contact/details') }}" >{{ $m->name }}</a>
+                                    <a class="nav-link dropdown-toggle" href="{{ url('contact') }}" >{{ $m->name }}</a>
                                     @endif
 
                                     @if($m->name == "Offers")
@@ -242,7 +242,7 @@
                                         @endif
 
                                         @if($m->name == "Contact")
-                                        <a href="{{ url('contact/details') }}"><b>{{ $m->name }}</b></a>
+                                        <a href="{{ url('contact') }}"><b>{{ $m->name }}</b></a>
                                         @endif
 
 
@@ -642,26 +642,26 @@ $(function() {
         success: function(e) {
             overlayMenuOpen(), $("#BookingForm").hide(), $("#enquiry").fadeIn()
         }
-    }), e.preventDefault()
-}), $("#ContactForm").on("submit", function(e) {
-    $.ajax({
-        type: "POST",
-        url: "{{ url('contact/send') }}",
-        data: $("#ContactForm").serialize(),
-        success: function(e) {
-            overlayMenuOpen(), $("#BookingForm").hide(), $("#enquiry").fadeIn()
-        }
-    }), e.preventDefault()
-}), $("#room_ContactForm").on("submit", function(e) {
-    $.ajax({
-        type: "POST",
-        url: "{{ url('contact/room/send') }}",
-        data: $("#room_ContactForm").serialize(),
-        success: function(e) {
-            overlayMenuOpen(), $("#BookingForm").hide(), $("#enquiry").fadeIn()
-        }
-    }), e.preventDefault()
-}), $(document).ready(function() {
+    }), e.preventDefault()}), 
+    // $("#ContactForm").on("submit", function(e) {
+    // $.ajax({
+    //     type: "POST",
+    //     url: "{{ url('contact/send') }}",
+    //     data: $("#ContactForm").serialize(),
+    //     success: function(e) {
+    //         overlayMenuOpen(), $("#BookingForm").hide(), $("#enquiry").fadeIn()
+    //     }
+    // }), e.preventDefault()}), 
+    // $("#room_ContactForm").on("submit", function(e) {
+    // $.ajax({
+    //     type: "POST",
+    //     url: "{{ url('contact/room/send') }}",
+    //     data: $("#room_ContactForm").serialize(),
+    //     success: function(e) {
+    //         overlayMenuOpen(), $("#BookingForm").hide(), $("#enquiry").fadeIn()
+    //     }
+    // }), e.preventDefault()}), 
+    $(document).ready(function() {
     function e() {
         verticalOffset = "undefined" != typeof verticalOffset ? verticalOffset : 0, element = $("body"), offset = element.offset(), offsetTop = offset.top, $("html, body").animate({
             scrollTop: offsetTop

@@ -17,13 +17,13 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('offers/', [OffersController::class, 'index'])->name('offers');
 Route::get('privacy/',[PrivacyController::class, 'index'])->name('privacy');
 Route::get('terms/',[PrivacyController::class, 'terms'])->name('terms');
+Route::get('contact/', [ContactController::class, 'details'])->name('contact');
 // Route::get('/rooms/executive', [RoomsController::class, 'executive'])->name('rooms/executive');
 // Route::get('/rooms/junior', [RoomsController::class, 'junior'])->name('rooms/junior');
 // Route::get('/rooms/ocean', [RoomsController::class, 'ocean'])->name('rooms/ocean');
 // Route::get('/rooms/premier',[RoomsController::class, 'premier'])->name('rooms/premier');
 Route::get('{id}', [PageContentController::class, 'index']);
 Route::get('gallery/main', [GalleryController::class, 'main'])->name('gallery/main');
-Route::get('contact/details', [ContactController::class, 'details'])->name('contact/details');
 Route::get('blog/all',[BlogController::class, 'index'])->name('blog');
 Route::get('blog/read/{slug}',[BlogController::class, 'read'])->name('read');
 
@@ -31,8 +31,8 @@ Route::get('blog/read/{slug}',[BlogController::class, 'read'])->name('read');
 // Route::post('bookings/send','BookingController@sendBookingFn')->name('bookings/send');
 // Route::post('newsletter/send','NewsletterController@SendNewsletterFn')->name('newsletter/send');
 Route::post('enquiry/send', [ContactController::class, 'SendEnquireFn'])->name('enquiry/send');
-Route::post('contact/send',[ContactController::class, 'sendContactFn'])->name('contact/send');
-Route::post('contact/room/send',[ContactController::class, 'sendContactRoomFn'])->name('contact/room/send');
+Route::post('contact/general/acknowledge',[ContactController::class, 'sendContactFn'])->name('contact/send');
+Route::post('contact/room/acknowledge',[ContactController::class, 'sendContactRoomFn'])->name('contact/room/send');
 
 
 View::composer('_shared.main', function($view){
