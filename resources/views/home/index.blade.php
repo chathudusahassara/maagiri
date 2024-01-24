@@ -82,8 +82,8 @@
         </div> -->
         <!-- sticky menu -->
 
-        <div class="logo d-none d-sm-block"><a href="{{ url('home') }}"><img src="images/logo_desktop.svg" data-color="violet" alt="Maagiri Logo"></a></div>
-        <div class="logo-mobi d-block d-sm-none"><a href="{{ url('home') }}"><img src="images/logo_mobile.svg" data-color="violet" alt="Maagiri Logo"></a></div>
+        <div class="logo d-none d-sm-block"><a href="{{ url('/') }}"><img src="images/logo_desktop.svg" data-color="violet" alt="Maagiri Logo"></a></div>
+        <div class="logo-mobi d-block d-sm-none"><a href="{{ url('/') }}"><img src="images/logo_mobile.svg" data-color="violet" alt="Maagiri Logo"></a></div>
         <div class="pp-caption"></div>
     </section>
 
@@ -242,7 +242,11 @@
                             <h2>{{ $dn->name }}</h2>
                             <div class="orange-brand"></div>
                             {!! $dn->details !!}
+                            @if($dn->name == 'Peak')
+                            <a href="{{ url('peak') }}" class="btn btn-orange-brand">EXPLORE</a>
+                            @else
                             <a href="{{ url('coffee_curve') }}" class="btn btn-orange-brand">EXPLORE</a>
+                            @endif
                         </div>
                         @endif
                     </div>
@@ -296,7 +300,7 @@
                             <h2>{{ $ev->name }}</h2>
                             <div class="orange-brand"></div>
                             {!! $ev->details !!}
-                            <a href="{{ url('weddings_celebrations') }}" class="btn btn-orange-brand">EXPLORE</a>
+                            <a href="{{ url('events_meetings') }}" class="btn btn-orange-brand">EXPLORE</a>
                         </div>
                         <div class="col-md-6 parent">
                         <div class = "image" style="background-image:url({{ asset('storage/d/'.$ev->file) }});"></div>
@@ -309,7 +313,7 @@
                             <h2>{{ $ev->name }}</h2>
                             <div class="orange-brand"></div>
                             {!! $ev->details !!}
-                            <a href="{{ url('events_meetings') }}" class="btn btn-orange-brand">EXPLORE</a>
+                            <a href="{{ url('weddings_celebrations') }}" class="btn btn-orange-brand">EXPLORE</a>
                         </div>
                         @endif
                     </div>

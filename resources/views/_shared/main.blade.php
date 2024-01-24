@@ -187,7 +187,7 @@
             </div>
             <div class="col-md-4"><img src="{{ asset('images/payment-gateway.png') }}" width="100%"></div>
             <div class="col-md-12">
-            <p class="copy">© 2018 Maagiri Hotel, All Rights Reserved <span>Designed & Developed by <b>Nous</b></span></p>
+            <p class="copy">©<?php echo date("Y"); ?> Maagiri Hotel, All Rights Reserved <span>Designed & Developed by <b>Nous</b></span></p>
             </div>
             </div>
             </div>

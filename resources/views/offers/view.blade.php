@@ -60,8 +60,8 @@
         </div>
         <!-- sticky menu -->
 
-                        <div class="logo d-none d-sm-block"><a href="{{ url('home') }}"><img src="../images/logo_desktop.svg" data-color="violet" alt="Maagiri Logo"></a></div>
-                        <div class="logo-mobi d-block d-sm-none"><a href="{{ url('home') }}"><img src="../images/logo_mobile.svg" data-color="violet" alt="Maagiri Logo"></a></div>
+                        <div class="logo d-none d-sm-block"><a href="{{ url('/') }}"><img src="../images/logo_desktop.svg" data-color="violet" alt="Maagiri Logo"></a></div>
+                        <div class="logo-mobi d-block d-sm-none"><a href="{{ url('/') }}"><img src="../images/logo_mobile.svg" data-color="violet" alt="Maagiri Logo"></a></div>
                       <div class="container caption-holder">
                           <div class="row">
                           <div class="pp-caption-pages">

@@ -1,7 +1,7 @@
 <section id="book-section" class='d-none d-sm-block'>
                     <div id="bookBar" class="container-fluid black-container heading-container">
                             <div class="book-brand">
-                                    <a href="{{ url('home') }}"><img src="../images/logo_small.png" data-color="violet" alt="Maagiri Logo" width="60" height="55"></a>
+                                    <a href="{{ url('/') }}"><img src="../images/logo_small.png" data-color="violet" alt="Maagiri Logo" width="60" height="55"></a>
                             </div>
                             <div class="burger-menu">
                                     <a href="javascript:;" onclick="stickyMenu()">

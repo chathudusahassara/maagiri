@@ -30,8 +30,8 @@ border: none;
 
 <section id="header">
                     <div class="container-fluid" >
-                    <div class="logo d-none d-sm-block"><a href="{{ url('home') }}"><img src="../images/logo_desktop.svg" data-color="violet" alt="Maagiri Logo"></a></div>
-                        <div class="logo-mobi d-block d-sm-none"><a href="{{ url('home') }}"><img src="../images/logo_mobile.svg" data-color="violet" alt="Maagiri Logo"></a></div>
+                    <div class="logo d-none d-sm-block"><a href="{{ url('/') }}"><img src="../images/logo_desktop.svg" data-color="violet" alt="Maagiri Logo"></a></div>
+                        <div class="logo-mobi d-block d-sm-none"><a href="{{ url('/') }}"><img src="../images/logo_mobile.svg" data-color="violet" alt="Maagiri Logo"></a></div>
                     </div>
 </section>
 

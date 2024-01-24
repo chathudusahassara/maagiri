@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\View;
 
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 Route::get('offers/', [OffersController::class, 'index'])->name('offers');
 Route::get('privacy/',[PrivacyController::class, 'index'])->name('privacy');
 Route::get('terms/',[PrivacyController::class, 'terms'])->name('terms');
