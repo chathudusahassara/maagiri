@@ -767,3 +767,22 @@ $(function() {
 
 
 </html>
+
+<style>
+
+.whatsapp-scroll-top-wrapper{
+    position: fixed;
+    width: 50px;
+	height: 48px;
+	right: 30px;
+	bottom: 30px;
+    background-color: #25d366 ;
+    border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+    padding: 7px;
+    z-index: 99999999;
+    align-items: center;
+}
+</style>
