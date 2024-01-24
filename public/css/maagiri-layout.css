@@ -1639,11 +1639,6 @@ body{
 }
 
 
-
-.whatsapp-scroll-top-wrapper a {
-    color: white;
-}
-
 .scroll-top-wrapper {
     position: fixed;
     opacity: 0;

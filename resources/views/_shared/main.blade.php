@@ -785,4 +785,8 @@ $(function() {
     z-index: 99999999;
     align-items: center;
 }
+
+.whatsapp-scroll-top-wrapper a {
+    color: white;
+}
 </style>
