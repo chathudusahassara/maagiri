@@ -18,7 +18,7 @@
                         <div id="bookBarContent" class="container booking-bar-normal">
                         <div class="row">
                             <div class="col-md-12" class="sticky_bookingbar">
-                                <form method="GET" action="https://live.ipms247.com//booking/loadroomlisting.php?">
+                                <form method="GET" action="https://reservations.maagirihotel.com/booking/book-rooms-11448?">
                                     <div class="form-row">
                                         <div class="col-md-2" style="margin-right:50px;">
                                             <!-- <input type="text" class="form-control" placeholder="Rooms"> -->
