@@ -6,6 +6,10 @@
    function onSubmit(token) {
      document.getElementById("ContactForm").submit();
    }
+
+   function onSubmitRoom(token){
+    document.getElementById("room_ContactForm").submit();
+   }
  </script>
 <section id="header">
                         <div class="container-fluid page-head-banner" style="background-image:url(../images/gym.png);">
@@ -117,7 +121,7 @@
                                                     <label>MESSAGE*</label>
                                                     <textarea name="contactmessage" class="form-control" rows="5"></textarea>
                                             </div>
-                                            <button type="submit" class="btn btn-orange-brand float-right btn-send">SEND</button>
+                                            <button data-sitekey="6LfM_LwpAAAAAHBR0mYzv_Eh-mIzrr6Tg60G7JyT"  data-callback='onSubmitRoom' data-action='submit' type="submit" class="btn btn-orange-brand float-right btn-send">SEND</button>
                                             <button class="btn btn-orange-brand float-right btn-clear">CLEAR</button>
                                         </div>
                                     </form>    
