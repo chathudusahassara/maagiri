@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 use App\Mail\SendContact;
 use App\Mail\SendEnquire;
 use Illuminate\Support\Facades\Mail;
+use App\Rules\ReCaptcha;
 
 class ContactController extends Controller
 {
@@ -27,10 +28,12 @@ class ContactController extends Controller
             'mobile' => $request->input('mobile'),
             'subject' => $request->input('subject'),
             'contactmessage' => $request->input('contactmessage'),
+            'g-recaptcha-response' => ['required', new ReCaptcha]
         );
 
         //Mail::send(new Notification($mailData));
-        Mail::to('info@maagirihotel.com')->send(new SendContact($contactData));
+        // Mail::to('info@maagirihotel.com')->send(new SendContact($contactData));
+        Mail::to('shamoonis@gmail.com')->send(new SendContact($contactData));
 
         return view('notifications.booking-success');
 
@@ -46,10 +49,12 @@ class ContactController extends Controller
             'mobile' => $request->input('mobile'),
             'subject' => $request->input('subject'),
             'contactmessage' => $request->input('contactmessage'),
+            'g-recaptcha-response' => ['required', new ReCaptcha]
         );
 
         //Mail::send(new Notification($mailData));
-        Mail::to('reservations@maagirihotel.com')->send(new SendContact($contactData));
+        // Mail::to('reservations@maagirihotel.com')->send(new SendContact($contactData));
+        Mail::to('shamoonis@gmail.com')->send(new SendContact($contactData));
 
 
         return view('notifications.booking-success');
@@ -68,6 +73,7 @@ class ContactController extends Controller
             'email' => $request->input('email'),
             'messageBody' => $request->input('messageBody'),
             'type' => $request->input('type'),
+            'g-recaptcha-response' => ['required', new ReCaptcha]
         );
 
         Mail::to('info@maagirihotel.com')->send(new SendEnquire($enquireData));
