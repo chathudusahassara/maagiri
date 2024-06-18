@@ -12,7 +12,6 @@
    }
  </script> -->
  <script src="<https://www.google.com/recaptcha/api.js>" async defer></script>
-<div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
 <section id="header">
                         <div class="container-fluid page-head-banner" style="background-image:url(../images/gym.png);">
       
@@ -95,7 +94,7 @@
                                                     <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
                                                 @endif
                                             </div>  
-                                            <button data-sitekey="6LfM_LwpAAAAAHBR0mYzv_Eh-mIzrr6Tg60G7JyT"  data-callback='onSubmit' data-action='submit' type="submit" class="g-recaptcha btn btn-orange-brand float-right btn-send">SEND</button>
+                                            <button type="submit" class="g-recaptcha btn btn-orange-brand float-right btn-send">SEND</button>
                                             <button class="btn btn-orange-brand float-right btn-clear">CLEAR</button>
                                         </div>
                                     </form>

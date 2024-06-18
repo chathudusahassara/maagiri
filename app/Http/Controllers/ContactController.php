@@ -21,6 +21,15 @@ class ContactController extends Controller
 
     public function sendContactFn(Request $request){
 
+        $request->validate([
+            'firstname' => 'required',
+            'email' => 'required|email',
+            'mobile' => 'required|digits:10|numeric',
+            'subject' => 'required',
+            'contactmessage' => 'required',
+            'g-recaptcha-response' => ['required', new ReCaptcha]
+        ]);
+
         $contactData = array(
             'firstname' => $request->input('firstname'),
             'lastname' => $request->input('lastname'),
@@ -28,7 +37,6 @@ class ContactController extends Controller
             'mobile' => $request->input('mobile'),
             'subject' => $request->input('subject'),
             'contactmessage' => $request->input('contactmessage'),
-            'g-recaptcha-response' => ['required', new ReCaptcha]
         );
 
         //Mail::send(new Notification($mailData));
