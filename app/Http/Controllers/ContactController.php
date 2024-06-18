@@ -21,14 +21,16 @@ class ContactController extends Controller
 
     public function sendContactFn(Request $request){
 
+        
+
         $request->validate([
             'firstname' => 'required',
             'email' => 'required|email',
             'mobile' => 'required|digits:10|numeric',
-            'subject' => 'required',
             'contactmessage' => 'required',
             'g-recaptcha-response' => ['required', new ReCaptcha]
         ]);
+
 
         $contactData = array(
             'firstname' => $request->input('firstname'),
@@ -38,6 +40,7 @@ class ContactController extends Controller
             'subject' => $request->input('subject'),
             'contactmessage' => $request->input('contactmessage'),
         );
+
 
         //Mail::send(new Notification($mailData));
         // Mail::to('info@maagirihotel.com')->send(new SendContact($contactData));
@@ -49,6 +52,14 @@ class ContactController extends Controller
 
     //sendContactRoomFn
     public function sendContactRoomFn(Request $request){
+
+        $request->validate([
+            'firstname' => 'required',
+            'email' => 'required|email',
+            'mobile' => 'required|digits:10|numeric',
+            'contactmessage' => 'required',
+            'g-recaptcha-response' => ['required', new ReCaptcha]
+        ]);
 
         $contactData = array(
             'firstname' => $request->input('firstname'),
