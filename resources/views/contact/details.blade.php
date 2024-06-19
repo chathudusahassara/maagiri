@@ -91,7 +91,7 @@
                                             <div class="form-group">
                                                 <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
                                                 @if ($errors->has('g-recaptcha-response'))
-                                                    <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                                                    <span class="text-danger" style="font-size: 12px;">{{ $errors->first('g-recaptcha-response') }}</span>
                                                 @endif
                                             </div>  
 
@@ -133,7 +133,7 @@
                                             <div class="form-group">
                                                 <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
                                                 @if ($errors->has('g-recaptcha-response'))
-                                                    <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                                                    <span class="text-danger" style="font-size: 12px;">{{ $errors->first('g-recaptcha-response') }}</span>
                                                 @endif
                                             </div>  
                                             <button type="submit" class="g-recaptcha btn btn-orange-brand float-right btn-send">SEND</button>

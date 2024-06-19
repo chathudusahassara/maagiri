@@ -43,8 +43,8 @@ class ContactController extends Controller
 
 
         //Mail::send(new Notification($mailData));
-        // Mail::to('info@maagirihotel.com')->send(new SendContact($contactData));
-        Mail::to('shamoonis@gmail.com')->send(new SendContact($contactData));
+        Mail::to('info@maagirihotel.com')->send(new SendContact($contactData));
+        // Mail::to('shamoonis@gmail.com')->send(new SendContact($contactData));
 
         return view('notifications.booking-success');
 
@@ -72,8 +72,8 @@ class ContactController extends Controller
         );
 
         //Mail::send(new Notification($mailData));
-        // Mail::to('reservations@maagirihotel.com')->send(new SendContact($contactData));
-        Mail::to('shamoonis@gmail.com')->send(new SendContact($contactData));
+        Mail::to('reservations@maagirihotel.com')->send(new SendContact($contactData));
+        //Mail::to('shamoonis@gmail.com')->send(new SendContact($contactData));
 
 
         return view('notifications.booking-success');
