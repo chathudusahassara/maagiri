@@ -57,6 +57,49 @@
                         <div id="contact-form" class="container contact-form">
                            
                             <div class="row">
+
+                            <div class="col-md-6" style=" font-size:22px; margin-bottom:24px;">
+                                    <form id="room_ContactForm" method="POST" action="{{url('contact/room/acknowledge')}}">
+                                        <div class="form-group">
+                                            <h1 style=" font-size:22px; margin-bottom:24px;">For Room Inquiries</h1>
+                                            <div class="form-holder">
+                                                <label>FULL NAME*</label>
+                                                <input type="text" class="form-control" name="firstname" placeholder="Enter your first name" required>
+                                            </div>
+                                            <!-- <div class="form-holder">
+                                                <label>LAST NAME</label>
+                                                <input type="text" class="form-control" name="lastname" placeholder="And the last name">
+                                            </div> -->
+                                            <div class="form-holder">
+                                                    <label>EMAIL ADDRESS*</label>
+                                                    <input type="email" class="form-control" name="email" placeholder="Your email address" required>
+                                            </div>
+                                            <div class="form-holder">
+                                                    <label>CONTACT NUMBER</label>
+                                                    <input type="text" class="form-control" name="mobile" placeholder="Your telephone or mobile number">
+                                                    {{ csrf_field() }}
+                                            </div>
+                                            <!-- <div class="form-holder">
+                                                    <label>SUBJECT*</label>
+                                                    <input type="text" name="subject" class="form-control" placeholder="General Inquiry" required>
+                                            </div> -->
+                                            <div class="form-holder">
+                                                    <label>MESSAGE*</label>
+                                                    <textarea name="contactmessage" class="form-control" rows="5"></textarea>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
+                                                @if ($errors->has('g-recaptcha-response'))
+                                                    <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                                                @endif
+                                            </div>  
+
+                                            <button type="submit" class="btn btn-orange-brand float-right btn-send">SEND</button>
+                                            <button class="btn btn-orange-brand float-right btn-clear">CLEAR</button>
+                                        </div>
+                                    </form>    
+                                </div>
                  
                                 <div class="col-md-6" style=" font-size:22px; margin-bottom:84px;">
                                     <form id="ContactForm" method="POST" action="{{url('contact/general/acknowledge')}}">
@@ -99,48 +142,7 @@
                                     </form>
                                 </div>
 
-                                <div class="col-md-6" style=" font-size:22px; margin-bottom:24px;">
-                                    <form id="room_ContactForm" method="POST" action="{{url('contact/room/acknowledge')}}">
-                                        <div class="form-group">
-                                            <h1 style=" font-size:22px; margin-bottom:24px;">For Room Inquiries</h1>
-                                            <div class="form-holder">
-                                                <label>FULL NAME*</label>
-                                                <input type="text" class="form-control" name="firstname" placeholder="Enter your first name" required>
-                                            </div>
-                                            <!-- <div class="form-holder">
-                                                <label>LAST NAME</label>
-                                                <input type="text" class="form-control" name="lastname" placeholder="And the last name">
-                                            </div> -->
-                                            <div class="form-holder">
-                                                    <label>EMAIL ADDRESS*</label>
-                                                    <input type="email" class="form-control" name="email" placeholder="Your email address" required>
-                                            </div>
-                                            <div class="form-holder">
-                                                    <label>CONTACT NUMBER</label>
-                                                    <input type="text" class="form-control" name="mobile" placeholder="Your telephone or mobile number">
-                                                    {{ csrf_field() }}
-                                            </div>
-                                            <!-- <div class="form-holder">
-                                                    <label>SUBJECT*</label>
-                                                    <input type="text" name="subject" class="form-control" placeholder="General Inquiry" required>
-                                            </div> -->
-                                            <div class="form-holder">
-                                                    <label>MESSAGE*</label>
-                                                    <textarea name="contactmessage" class="form-control" rows="5"></textarea>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
-                                                @if ($errors->has('g-recaptcha-response'))
-                                                    <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
-                                                @endif
-                                            </div>  
-
-                                            <button type="submit" class="btn btn-orange-brand float-right btn-send">SEND</button>
-                                            <button class="btn btn-orange-brand float-right btn-clear">CLEAR</button>
-                                        </div>
-                                    </form>    
-                                </div>
+                               
                          
                             </div>
                         </div>
