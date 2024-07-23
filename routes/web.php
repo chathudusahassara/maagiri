@@ -11,6 +11,16 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\OffersController;
 use Illuminate\Support\Facades\View;
 
+use Inertia\Inertia;
+
+
+Route::get('/dine', function () {
+    return Inertia::render('Dining/Index', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/', [HomeController::class, 'index']);
@@ -44,3 +54,6 @@ View::composer('_shared.includes.booking', function($view){
     $view->with('menu', (new PageController)->getParents());
     $view->with('submenu', (new PageController)->getSubMenus());
 });
+
+
+

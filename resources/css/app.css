@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+@layer base {
+    @font-face {
+        font-family: "Freight_Neo_Pro";
+        src: url(fonts/Freight_Neo_Pro.otf) format("opentype");
+    }
+
+    @font-face {
+        font-family: "Roboto_Light";
+        src: url(fonts/Roboto-Light.ttf) format("opentype");
+    }
+}
+
+
+.nav {
+    list-style: none;
+    padding: 0;
+  }
+  .nav > li {
+    display: inline-block;
+    position: relative;
+  }
+  .dropdown-menu {
+    display: block;
+    position: absolute;
+    background: #232221;
+    top: 100%;
+    left: -30px;
+    z-index: 50;
+    list-style: none;
+    padding: 10px 30px;
+    margin: 0;
+  }
+  .dropdown-menu a:hover{
+    background: #232221;
+    color: #dcb38d;
+    }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity 0.5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+    opacity: 0;
+  }
+
+

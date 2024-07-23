@@ -87,7 +87,7 @@
                                 <li class="nav-item">
                                     @if($m->has_submenu)
                                     <div class="dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" >{{ $m->name }}</a>
+                                        <a class="nav-link dropdown-toggle" href="{{ url($m->link_name) }}" >{{ $m->name }}</a>
                                         <div class="dropdown-menu">
                                             @foreach($submenu as $sb)
                                                 @if($sb->parent_id == $m->id)
