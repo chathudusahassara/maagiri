@@ -6,15 +6,15 @@ const isDropdownVisible = ref(false);
 const dropdownTimeout = ref(null);
 const activeDropdown = ref(null);
 const menuItems = ref([
-      { name: 'Rooms', link:'#', submenu: [{name: 'Executive Suite', link: ''}, {name: 'Junior Suite', link: ''},{name: 'Premier Suite', link: ''} ] },
-      { name: 'Dining', link: '/dine', submenu: [{name: 'Coffee Curve', link: 'coffee_curve'}, {name: 'Faru', link: '/faru'},{name: 'Peak', link: '/peak'} ]},
-      { name: 'Events', link:'#'},
-      { name: 'Wellness', link:''},
-      { name: 'Gallery', link:'' },
-      { name: 'Contact', link:''},
-      { name: 'Offers', link:'' },
-      { name: 'Blog', link:''},
-      { name: 'Book Now', link:'' },
+      { name: 'Rooms', link:'#', submenu: [{name: 'Executive Suite', link: '/executive_suite'}, {name: 'Junior Suite', link: '/Junior_Suite'},{name: 'Premier Suite', link: '/premier_room'} ] },
+      { name: 'Dining', link: '/dining', submenu: [{name: 'Coffee Curve', link: '/coffee_curve'}, {name: 'Faru', link: '/faru'},{name: 'Peak', link: '/peak'} ]},
+      { name: 'Events', link:'#', submenu: [{name: 'Weddings & Celebrations', link: '/events/weddings'}, {name: 'Events & Meetings', link: '/events/meetings'} ]},
+      { name: 'Wellness', link:'#', submenu: [{name: 'Fitness & Gym', link: '/fitness_gym'} ]},
+      { name: 'Gallery', link:'/gallery/main' },
+      { name: 'Contact', link:'/contact'},
+      { name: 'Offers', link:'/offers' },
+      { name: 'Blog', link:'/blog/all'},
+      { name: 'Book Now', link:'https://reservations.maagirihotel.com/booking/book-rooms-11448' },
       // Add more menu items as needed
     ]);
 
@@ -41,7 +41,21 @@ const hideDropdown = (index) => {
     <div>
     <header>
         <nav>
-            <div class="flex bg-mgblack-100 justify-between md:px-10">
+            <div class=" flex bg-mgblack-100 justify-between pl-3 md:hidden  ">
+                <img src="/images/logo_mobile.svg" class=" w-32" data-color="violet" alt="Maagiri Logo">
+                <div class=" flex">
+                    <div class=" w-14 text-white font-freigtNeo text-sm p-2">
+                        <!-- <a href="javascript:;" onclick="overlayMenuOpen()">Book Now</a> -->
+                        <a href="https://reservations.maagirihotel.com/booking/book-rooms-11448">Book Now</a>
+                    </div>
+                    <div>
+                            <a href="#" onclick="openNav()">
+                                <img src="/images/menu-ico.png" class=" w-16" width="100%">
+                            </a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:flex bg-mgblack-100 justify-between md:px-10 hidden">
                 <div class="relative w-96 ">
                     <div id="logo" class="absolute top-0 left-0 bg-mggrey-200 p-9 z-50">
                         <a href="/">

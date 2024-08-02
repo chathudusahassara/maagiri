@@ -42,31 +42,31 @@ const experiences = [
         title: 'Indian Buffet – Every Thursday Night',
         subtitle: 'MVR 220++ per person',
         description: 'Indulge in the rich and diverse flavors of India every Thursday night at our Indian Buffet. Enjoy a range of appetizers, curries, tandoori specialties and desserts, each prepared with aromatic spices and fresh ingredients.',
-        image: '/images/pages/coffee-curve-ed.jpg'
+        image: '/images/dining/exp-indian.jpg'
     },
     {
         title: 'Thai Chinese Buffet - Every Friday Night',
         subtitle: 'MVR 220++ per person',
         description: 'Join us every Friday night for a fusion of Thai and Chinese cuisine. Our Thai-Chinese Buffet offers a delightful mix of flavors from these two vibrant culinary traditions. Enjoy a variety of soups, stir-fries, noodles, and more, crafted with fresh ingredients and bold spices.',
-        image: '/images/pages/coffee-curve-ed.jpg'
+        image: '/images/dining/exp-thai.jpg'
     },
     {
         title: 'Sri Lankan Buffet - Every Saturday Night',
         subtitle: 'MVR 220++ per person',
         description: 'Experience the vibrant and spicy flavors of Sri Lanka every Saturday night at our Sri Lankan Buffet. Our menu features an array of traditional dishes that showcase the islands rich culinary heritage. Enjoy a variety of curries, sambols, and rice dishes, each bursting with unique spices and flavors.',
-        image: '/images/pages/coffee-curve-ed.jpg'
+        image: '/images/dining/exp-srilankan.jpg'
     },
     {
         title: 'Evening Tea at Peak',
         subtitle: 'Available Daily : 4pm – 7pm',
         description: 'Indulge in a delightful evening tea experience at Peak, where we offer tea paired with local delicacies. Whether youre winding down after a busy day or catching up with friends, our evening tea service provides the perfect setting. Peak provides a cozy and inviting atmosphere with panoramic views, making it the ideal spot to unwind.',
-        image: '/images/pages/coffee-curve-ed.jpg'
+        image: '/images/dining/exp-evening.jpg'
     },
     {
         title: 'Private Dinner Experience',
         subtitle: '',
         description: 'Experience an unforgettable private dining experience with our exclusive package, designed to create cherished memories for you and your loved ones. Our Private Dining Package includes a range of luxurious amenities and personalized services to make your special occasion truly exceptional.',
-        image: '/images/pages/coffee-curve-ed.jpg'
+        image: '/images/dining/exp-romance.jpg'
     }
 ];
 

@@ -9,18 +9,22 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\OffersController;
+use App\Http\Controllers\EventsControlller;
 use Illuminate\Support\Facades\View;
 
 use Inertia\Inertia;
 
 
-Route::get('/dine', function () {
+Route::get('/dining', function () {
     return Inertia::render('Dining/Index', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::get('/events/meetings', [EventsControlller::class, 'events']);
+Route::get('/events/weddings', [EventsControlller::class, 'weddings']);
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/', [HomeController::class, 'index']);
