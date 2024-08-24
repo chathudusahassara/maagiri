@@ -1,22 +1,22 @@
 <script setup>
-import { ref } from 'vue';
-import { PhForkKnife, PhCake, PhBowlFood } from "@phosphor-icons/vue";
+import { ref, onMounted, computed } from 'vue';
+import { PhX } from "@phosphor-icons/vue";
+import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
+import axios from 'axios';
+import {
+    Disclosure,
+    DisclosureButton,
+    DisclosurePanel,
+  } from '@headlessui/vue'
 
+
+
+//http://maagiri-web-new.test/api/v1/menu
+const open = ref(false)
 const isDropdownVisible = ref(false);
 const dropdownTimeout = ref(null);
 const activeDropdown = ref(null);
-const menuItems = ref([
-      { name: 'Rooms', link:'#', submenu: [{name: 'Executive Suite', link: '/executive_suite'}, {name: 'Junior Suite', link: '/Junior_Suite'},{name: 'Premier Suite', link: '/premier_room'} ] },
-      { name: 'Dining', link: '/dining', submenu: [{name: 'Coffee Curve', link: '/coffee_curve'}, {name: 'Faru', link: '/faru'},{name: 'Peak', link: '/peak'} ]},
-      { name: 'Events', link:'#', submenu: [{name: 'Weddings & Celebrations', link: '/events/weddings'}, {name: 'Events & Meetings', link: '/events/meetings'} ]},
-      { name: 'Wellness', link:'#', submenu: [{name: 'Fitness & Gym', link: '/fitness_gym'} ]},
-      { name: 'Gallery', link:'/gallery/main' },
-      { name: 'Contact', link:'/contact'},
-      { name: 'Offers', link:'/offers' },
-      { name: 'Blog', link:'/blog/all'},
-      { name: 'Book Now', link:'https://reservations.maagirihotel.com/booking/book-rooms-11448' },
-      // Add more menu items as needed
-    ]);
+const menuItems = ref([]);
 
 const showDropdown = (index) => {
       clearTimeout(dropdownTimeout.value);
@@ -36,20 +36,65 @@ const hideDropdown = (index) => {
       }, 200);
 }
 
+async function fetchMenuItems() {
+    try {
+        const response = await axios.get('/api/v1/menu');
+        menuItems.value = response.data.map(item => {
+        // Normalize submenus to always be an array
+        if (item.has_submenu) {
+            if (!Array.isArray(item.submenus)) {
+            item.submenus = Object.values(item.submenus);
+            }
+        }
+        return item;
+        });
+    } catch (error) {
+        console.error('Error fetching menu items:', error);
+    }
+}
+
+onMounted(() => {
+  fetchMenuItems();
+});
+
+
+const sidenavOpen = ref(false);
+const overlayVisible = ref(false);
+
+// Computed classes for the sidenav
+const sidenavClasses = computed(() => ({
+  'w-64': sidenavOpen.value, // Set to your desired width when open (e.g., w-64 for 16rem width)
+  'w-0': !sidenavOpen.value, // Collapse to 0 width when closed
+}));
+
+// Open the side navigation
+const openNav = () => {
+  sidenavOpen.value = true; // Open the sidenav
+  overlayVisible.value = true; // Show overlay
+};
+
+// Close the side navigation
+const closeNav = () => {
+  sidenavOpen.value = false; // Close the sidenav
+  overlayVisible.value = false; // Hide overlay
+};
+
 </script>
 <template>
-    <div>
+    <div class=" relative">
     <header>
         <nav>
-            <div class=" flex bg-mgblack-100 justify-between pl-3 md:hidden  ">
+            <div class=" flex bg-mgblack-100 justify-between md:hidden  ">
+                <a href="/" class=" py-4 pl-3">
                 <img src="/images/logo_mobile.svg" class=" w-32" data-color="violet" alt="Maagiri Logo">
+                </a>
                 <div class=" flex">
                     <div class=" w-14 text-white font-freigtNeo text-sm p-2">
                         <!-- <a href="javascript:;" onclick="overlayMenuOpen()">Book Now</a> -->
                         <a href="https://reservations.maagirihotel.com/booking/book-rooms-11448">Book Now</a>
                     </div>
                     <div>
-                            <a href="#" onclick="openNav()">
+                            <a href="#" @click="openNav">
                                 <img src="/images/menu-ico.png" class=" w-16" width="100%">
                             </a>
                     </div>
@@ -77,9 +122,9 @@ const hideDropdown = (index) => {
                             :class="{ 'active': activeDropdown === index }">
                             <a :href="item.link" class="dropdown-toggle">{{ item.name }}</a>
                             <transition name="fade">
-                                <ul v-show="activeDropdown === index && isDropdownVisible && item.submenu != null" class="dropdown-menu whitespace-nowrap">
-                                <li v-for="(submenu, subIndex) in item.submenu" :key="subIndex" class=" w-full py-1">
-                                    <a :href="submenu.link">{{ submenu.name }}</a>
+                                <ul v-show="activeDropdown === index && isDropdownVisible && item.submenus != null" class="dropdown-menu whitespace-nowrap">
+                                <li v-for="(submenu, subIndex) in item.submenus" :key="subIndex" class=" w-full py-1">
+                                    <a :href="submenu.link_name">{{ submenu.name }}</a>
                                 </li>
                                 </ul>
                             </transition>
@@ -171,6 +216,67 @@ const hideDropdown = (index) => {
     <!-- mobile -->
 </section>
 
+
+
+<TransitionRoot as="template" :show="open">
+    <Dialog class="relative z-50" @close="open = false">
+      <div class="fixed inset-0" />
+
+      <div class="fixed inset-0 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden bg-mgblack-100">
+          <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+            <TransitionChild as="template" enter="transform transition ease-in-out duration-500 sm:duration-700" enter-from="translate-x-full" enter-to="translate-x-0" leave="transform transition ease-in-out duration-500 sm:duration-700" leave-from="translate-x-0" leave-to="translate-x-full">
+              <DialogPanel class="pointer-events-auto w-screen max-w-lg">
+                <div class="flex h-full flex-col overflow-y-scroll bg-mgblack-100 py-6 shadow-xl">
+                  <div class="px-4 sm:px-6">
+                    <div class="flex items-start justify-between">
+                      <DialogTitle class="text-base font-semibold leading-6 text-gray-900">Panel title</DialogTitle>
+                      <div class="ml-3 flex h-7 items-center">
+                        <button type="button" class="relative rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" @click="open = false">
+                          <span class="absolute -inset-2.5" />
+                          <span class="sr-only">Close panel</span>
+                          <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="relative mt-6 flex-1 px-4 sm:px-6">
+                    <!-- Your content -->
+                  </div>
+                </div>
+              </DialogPanel>
+            </TransitionChild>
+          </div>
+        </div>
+      </div>
+    </Dialog>
+  </TransitionRoot>
+
+
+  <!-- Mobile Nav -->
+
+  <nav v-if="sidenavOpen" class="navbar navbar-expand-md maagiri-nav-dark bg-mgblack-100  top-0 right-0 bottom-0 left-0 z-50 fixed ">
+                    <div class=" flex justify-end">
+                            <button class=" text-2xl p-4" @click="closeNav()">
+                                <PhX :size="32" class=" text-white" />
+                            </button>
+                    </div>
+
+                <div class="container-fluid base-nav">
+                      <div class="brand"></div>
+                      
+                      <ul class=" block  ml-12 mt-10">
+                        <Disclosure v-for=" item in menuItems" :key=item as="div" class=" mb-8"  >
+                            <DisclosureButton class=" block text-gray-50 font-freigtNeo text-3xl">
+                                {{ item.name  }}
+                            </DisclosureButton>
+                            <DisclosurePanel v-if="item.submenus.length > 0" class="px-4 pb-2 pt-4 text-sm text-gray-500 block">
+                                <a v-for="subitem in item.submenus" :key="subitem" class=" block text-xl text-gray-50 mb-4" :href="'/'+subitem.link_name">{{ subitem.name }}</a>
+                            </DisclosurePanel>
+                        </Disclosure>
+                      </ul>
+                </div>
+    </nav>
 
 </div>
 </template>
