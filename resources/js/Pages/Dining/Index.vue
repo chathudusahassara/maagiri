@@ -137,7 +137,7 @@ const toggleExperience = (index) => {
 
 <section>
 <div class=" w-full ">
-    <div class=" w-5/12 mx-auto text-center pt-36 pb-24 text-mggrey-100">
+    <div class=" w-11/12 md:w-5/12 mx-auto text-center pt-36 pb-24 text-mggrey-100">
         <div class=" w-auto flex-col flex items-center mb-16">
         <h2 class=" text-5xl mb-10 text-mgblack-100 font-freigtNeo ">Dining Experiences</h2>
         <div class="border-b-4 border-mggold-100 w-16"></div>
@@ -146,15 +146,19 @@ const toggleExperience = (index) => {
     </div>
 </div>
 <div class=" w-11/12 mx-auto pb-36">
-    <div class=" grid md:grid-cols-3 xl:grid-cols-5 gap-8 justify-evenly">
-        <div id="experienceSliderItem" v-for="(experience, index) in experiences" :key="experience.title" class="w-full border border-gray-200 shadow-md cursor-pointer" @click="toggleExperience(index)">
-            <img :src="experience.image" class="object-cover w-full " style="transition: height 0.5s;" :class="expandedExperience == index ? 'h-32' : 'h-96'" />
-            <div class="px-5 mt-3 text-center flex flex-col justify-evenly">
-            <h2 class="text-lg font-bold text-center text-mgblack-100">{{ experience.title }}</h2>
-            <div class="border-b-4 border-mggold-100 pb-6 w-24 mx-auto mb-5"></div>
-                <div v-if="showDetails === index && expandedExperience == index " id="detailArea" class=" flex flex-col">
-                    <p class="text-mggrey-200">{{ experience.description }}</p>
-                    <a href="https://maagirihotel.com/coffee_curve#&panel1-1" class=" text-mggold-100 mb-3 mt-2 p-3 w-full font-bold">Talk to us</a>
+    <div class=" grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-2 justify-evenly">
+        <div id="experienceSliderItem" v-for="(experience, index) in experiences" :key="experience.title" class="w-full border border-gray-200 shadow-md cursor-pointer text-center mb-5 md:mb-0 " @click="toggleExperience(index)">
+            <div class=" flex flex-col justify-between">
+              <img :src="experience.image" class="object-cover w-full " style="transition: height 0.5s;" :class="expandedExperience == index ? 'h-32' : ' h-80'" />
+              <div class="px-5 mt-3 text-center flex flex-col justify-evenly">
+              <h2 class="text-lg font-bold text-center text-mgblack-100 py-4 font-freigtNeo">{{ experience.title }}</h2>
+              <!-- <div class="border-b-4 border-mggold-100 pb-6 w-24 mx-auto mb-5"></div> -->
+                  <div v-if="showDetails === index && expandedExperience == index " id="detailArea" class=" flex flex-col">
+                      <p class="text-mggrey-200 py-5">{{ experience.description }}</p>
+                      <div class="  w-full bg-mgblack-100 py-3 rounded-t-md">
+                        <a href="https://api.whatsapp.com/send/?phone=9607998484&text&type=phone_number&app_absent=0" class="  mb-3 mt-2 p-3 w-full font-bold text-mggold-100">Talk to us</a>
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>

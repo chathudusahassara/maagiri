@@ -25,19 +25,19 @@ const closeOverlay = () => {
 const dinings = [
   {
     name:'Muraka Maalam',
-    details: 'Located at the terrace of Maagiri hotel, Muraka Maalam provides a striking and unforgettable setting for events. Soaring over 60sqm this venue can accommodate events in theater, Classroom, Banquet & Boardroom Style and also comes with a built-in video screen.',
+    details: 'Perched on the terrace of Maagiri Hotel, Muraka Maalam offers an impressive and unforgettable event space. Spanning over 60sqm, it accomodates various setups, including theater, classroom, banquet, and boardroom styles.',
     image: '/images/pages/events/events/muraka-maalam.jpg',
     link: '/peak'
   },
   {
     name:'Peak - 9th Floor',
-    details: 'Floor to ceiling windows that overlook the unobstructed seaview, this venue is ideal for celebrations or conferences up to 50 guest. It also comes with a built-in video projectors and can be adapted for a variety of seating configurations.',
+    details: 'With floor-to-ceiling windows offering stunning sea views, this versatile venu is perfect for celebrations or conferences of up to 50 guests. Equipped with built-in video projectors, it can be adapted to various seating configurations, ensuring a tailored experience for any event.',
     image: '/images/pages/events/events/9meetin-room.jpg',
     link: '/faru'
   },
   {
     name:'Meeting Room - 2nd Floor',
-    details: 'Floor to ceiling windows that overlook the unobstructed seaview, this venue is ideal for celebrations or conferences up to 50 guest. It also comes with a built-in video projectors and can be adapted for a variety of seating configurations.',
+    details: 'This intimate event space, perfect for board meetings or small gatherings of up to 22 guests, offers a unique atomsphere and features a built-in 55" TV for seamless presentations and discussions.',
     image: '/images/pages/events/events/2meeting-room.jpg',
     link: '/coffee_curve'
   }
@@ -113,14 +113,16 @@ const showDetails = ref(null);
 
   <div class=" w-full lg:w-8/12 mx-auto ">
     <div class=" px-8 md:px-0 lg:flex gap-8 justify-evenly">
-      <div class=" mb-10 shadow-md bg-mgblack-100 w-full" v-for="dining in dinings" :key="dining.name">
-        <img id="bbImage" :src="dining.image" class="object-cover aspect-auto w-full " />
-        <div class="px-5 mt-8 text-center flex flex-col">
-          <h2 class=" text-2xl font-bold text-center text-mggrey-100">{{ dining.name }}</h2>
-          <div class=" border-b-4 border-mggold-100 pb-6 w-24 mx-auto mb-10"></div>
-          <p class=" text-mggrey-100">{{ dining.details }}</p>
-          <a :href="dining.link" class=" bg-mggold-100 text-black mb-12 mt-12 p-3">Talk to us</a>
+      <div class=" mb-10 shadow-md bg-mgblack-100 w-full flex flex-col justify-between" v-for="dining in dinings" :key="dining.name">
+        <div>
+            <img id="bbImage" :src="dining.image" class="object-cover aspect-auto w-full " />
+            <div class="px-5 mt-8 text-center flex flex-col">
+            <h2 class=" text-2xl font-bold text-center text-mggrey-100 pb-6">{{ dining.name }}</h2>
+            <div class=" border-b-4 border-mggold-100 w-24 mx-auto mb-10"></div>
+            <p class=" text-mggrey-100">{{ dining.details }}</p>
+            </div>
         </div>
+        <a :href="dining.link" class=" bg-mggold-100 text-black  mt-12 p-3 w-full text-center font-bold">Talk to us</a>
       </div>
     </div>
   </div>

@@ -18,6 +18,9 @@ const dropdownTimeout = ref(null);
 const activeDropdown = ref(null);
 const menuItems = ref([]);
 
+//get app url from env
+const appUrl = import.meta.env.VITE_APP_URL;
+
 const showDropdown = (index) => {
       clearTimeout(dropdownTimeout.value);
       dropdownTimeout.value = setTimeout(() => {
@@ -118,13 +121,14 @@ const closeNav = () => {
                     <a class="py-4 md:py-9" href="#">Offers</a>
                     <a class="py-4 md:py-9" href="#">Blog</a>
                     <a class="py-4 md:py-9 text-mggold-100" href="#">Book Now</a> -->
+                    
                         <li v-for="(item, index) in menuItems" :key="index" class="dropdown py-9 bg-mgblack-100" @mouseenter="showDropdown(index)" @mouseleave="hideDropdown(index)"
                             :class="{ 'active': activeDropdown === index }">
-                            <a :href="item.link" class="dropdown-toggle">{{ item.name }}</a>
-                            <transition name="fade">
+                            <a :href="appUrl+item.link_name" class="dropdown-toggle">{{ item.name }}</a>
+                            <transition name="fade" v-if="item.has_submenu">
                                 <ul v-show="activeDropdown === index && isDropdownVisible && item.submenus != null" class="dropdown-menu whitespace-nowrap">
                                 <li v-for="(submenu, subIndex) in item.submenus" :key="subIndex" class=" w-full py-1">
-                                    <a :href="submenu.link_name">{{ submenu.name }}</a>
+                                    <a :href="appUrl+submenu.link_name">{{ submenu.name }}</a>
                                 </li>
                                 </ul>
                             </transition>
@@ -268,10 +272,10 @@ const closeNav = () => {
                       <ul class=" block  ml-12 mt-10">
                         <Disclosure v-for=" item in menuItems" :key=item as="div" class=" mb-8"  >
                             <DisclosureButton class=" block text-gray-50 font-freigtNeo text-3xl">
-                                {{ item.name  }}
+                                <a :href="appUrl+item.link_name">{{ item.name  }}</a>
                             </DisclosureButton>
                             <DisclosurePanel v-if="item.submenus.length > 0" class="px-4 pb-2 pt-4 text-sm text-gray-500 block">
-                                <a v-for="subitem in item.submenus" :key="subitem" class=" block text-xl text-gray-50 mb-4" :href="'/'+subitem.link_name">{{ subitem.name }}</a>
+                                <a v-for="subitem in item.submenus" :key="subitem" class=" block text-xl text-gray-50 mb-4" :href="appUrl+subitem.link_name">{{ subitem.name }}</a>
                             </DisclosurePanel>
                         </Disclosure>
                       </ul>
