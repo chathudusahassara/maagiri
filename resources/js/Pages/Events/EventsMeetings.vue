@@ -122,7 +122,7 @@ const showDetails = ref(null);
             <p class=" text-mggrey-100">{{ dining.details }}</p>
             </div>
         </div>
-        <a :href="dining.link" class=" bg-mggold-100 text-black  mt-12 p-3 w-full text-center font-bold">Talk to us</a>
+        <a href="https://api.whatsapp.com/send/?phone=9607998484&text&type=phone_number&app_absent=0" class=" bg-mggold-100 text-black  mt-12 p-3 w-full text-center font-bold">Talk to us</a>
       </div>
     </div>
   </div>
