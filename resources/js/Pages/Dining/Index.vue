@@ -95,16 +95,16 @@ const toggleExperience = (index) => {
     <div class=" h-96 w-full   absolute bottom-0 z-10"></div>
     <div id="shortcutMenu" class="absolute z-20 bottom-5 right-5 bg-mgblack-100 text-mggrey-100 w-full md:w-4/12 text-center p-4 md:p-5 ">
       <h2 class=" text-xl font-freigtNeo py-5">We can help plan your dining experiences</h2>
-      <div class="flex justify-around m-2 md:m-5">
-        <button @click="openOverlay('dinner')" id="bookDinner" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl">
+      <div class="flex justify-around m-2 md:m-5 gap-2 items-center">
+        <button @click="openOverlay('dinner')" id="bookDinner" class="border border-gray-200 border-opacity-40 rounded-md p-5 flex flex-col items-center hover:shadow-2xl">
           <PhForkKnife :size="32" class=" text-mggold-100" />
           <p class="text-xs mt-3">BOOK A DINNER</p>
         </button>
-        <button @click="openOverlay('event')" id="bookEvent" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl">
+        <button @click="openOverlay('event')" id="bookEvent" class="border border-gray-200 border-opacity-40 rounded-md p-5 flex flex-col items-center hover:shadow-2xl">
           <PhCake :size="32" class=" text-mggold-100" />
           <p class="text-xs mt-3">BOOK AN EVENT</p>
         </button>
-        <button id="ourMenu" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl">
+        <button id="ourMenu" class="border border-gray-200 border-opacity-40 rounded-md p-5 flex flex-col items-center hover:shadow-2xl">
           <PhBowlFood :size="32" class=" text-mggold-100" />
           <a href="https://maagirihotel.com/storage/faru_menu.pdf"><p class="text-xs mt-3">OUR MENU</p></a>
         </button>
@@ -121,7 +121,7 @@ const toggleExperience = (index) => {
         <p>Experience the pinnacle of fine dining at Four Seasons Hotel London at Park Lane, where luxury and culinary excellence converge in the heart of Mayfair. At our renowned Park Lane restaurant, Pavyllon, French cuisine crafted by our talented chefs offers an exquisite dining experience.</p>
     </div>
   </div>
-  <div class=" w-full lg:w-8/12 mx-auto -mt-20">
+  <div class=" md:w-11/12 xl:w-9/12 mx-auto -mt-20">
     <div class=" px-8 md:px-0 lg:flex gap-8 justify-evenly">
       <div class=" mb-10 shadow-md bg-mgblack-100 w-full" v-for="dining in dinings" :key="dining.name">
         <img id="bbImage" :src="dining.image" class="object-cover aspect-auto w-full " />

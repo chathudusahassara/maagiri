@@ -62,10 +62,10 @@ const showDetails = ref(null);
           <PhForkKnife :size="32" class=" text-mggold-100" />
           <p class="text-xs mt-3">BOOK A VENUE</p>
         </button>
-        <button @click="openOverlay('event')" id="bookEvent" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl w-full">
+        <a href="http://maagiri.orrlo.com/files/factsheet_meetings.pdf" id="bookEvent" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl w-full">
           <PhCake :size="32" class=" text-mggold-100" />
           <p class="text-xs mt-3">FACT SHEET</p>
-        </button>
+        </a>
       </div>
     </div>
   </div>
