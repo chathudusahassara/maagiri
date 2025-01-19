@@ -111,7 +111,7 @@ const showDetails = ref(null);
     <div class=" w-full  ">
     <div class=" w-11/12 md:w-5/12 mx-auto text-center pt-36 pb-24 text-mggrey-100">
         <div class=" w-auto flex-col flex items-center mb-16">
-        <h2 class=" text-5xl mb-10 text-mgblack-100 font-freigtNeo ">Wedding Venues</h2>
+        <h2 class=" text-5xl mb-10 text-mgblack-100 font-freigtNeo ">Celebration Venue</h2>
         <div class="border-b-4 border-mggold-100 w-16"></div>
         </div>
         <p class=" text-mgblack-200">Discover exceptional dining at Maagiri Hotel, where we offer a variety of culinary experiences to satisfy every palate. Enjoy a range of options, from casual evening tea treats to exquisite theme buffets.</p>

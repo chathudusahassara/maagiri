@@ -123,14 +123,16 @@ const toggleExperience = (index) => {
   </div>
   <div class=" md:w-11/12 xl:w-9/12 mx-auto -mt-20">
     <div class=" px-8 md:px-0 lg:flex gap-8 justify-evenly">
-      <div class=" mb-10 shadow-md bg-mgblack-100 w-full" v-for="dining in dinings" :key="dining.name">
+      <div class=" mb-10 shadow-md bg-mgblack-100 w-full flex flex-col justify-between" v-for="dining in dinings" :key="dining.name">
         <img id="bbImage" :src="dining.image" class="object-cover aspect-auto w-full " />
         <div class="px-5 mt-8 text-center flex flex-col">
           <h2 class=" text-2xl font-bold text-center text-mggrey-100">{{ dining.name }}</h2>
           <div class=" border-b-4 border-mggold-100 pb-6 w-24 mx-auto mb-10"></div>
           <p class=" text-mggrey-100">{{ dining.details }}</p>
-          <a :href="dining.link" class=" bg-mggold-100 text-black mb-12 mt-12 p-3">Learn More</a>
         </div>
+        <a :href="dining.link" class=" px-5">
+         <div class="bg-mggold-100 text-black mb-12 mt-12 p-3 w-full text-center">Learn More</div>
+        </a>
       </div>
     </div>
   </div>
