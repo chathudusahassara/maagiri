@@ -21,10 +21,11 @@
                 </video> -->
                 <div class="carousel-item">
                 <!-- <iframe src="https://www.youtube.com/embed/cnMGJNgbsog?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-                    <video id="vid" loop autoplay preload="none" muted>
+                    <!-- <video id="vid" loop autoplay preload="none" muted>
                     <source src="{{ asset('storage/d/maagiri_building.mp4') }}" />
                     Your browser does not support the video tag.
-                    </video>
+                    </video> -->
+                    <img src="/storage/d/maagiri_banner.jpg" data-color="black" alt="First Image">
                     <div class="carousel-caption">
                         <h3 class="orange-brand">{!! $bn->name !!}</h3>
                         <p>{{ $bn->details }}</p>

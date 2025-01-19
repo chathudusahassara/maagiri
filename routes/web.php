@@ -23,6 +23,7 @@ Route::get('/dining', function () {
     ]);
 });
 
+Route::get('/events/', [EventsControlller::class, 'index'])->name('events');
 Route::get('/events/meetings', [EventsControlller::class, 'events']);
 Route::get('/events/weddings', [EventsControlller::class, 'weddings']);
 

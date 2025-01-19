@@ -150,13 +150,13 @@ const toggleExperience = (index) => {
         <div id="experienceSliderItem" v-for="(experience, index) in experiences" :key="experience.title" class="w-full border border-gray-200 shadow-md cursor-pointer text-center mb-5 md:mb-0 " @click="toggleExperience(index)">
             <div class=" flex flex-col justify-between">
               <img :src="experience.image" class="object-cover w-full " style="transition: height 0.5s;" :class="expandedExperience == index ? 'h-32' : ' h-80'" />
-              <div class="px-5 mt-3 text-center flex flex-col justify-evenly">
+              <div class="px-3 mt-3 text-center flex flex-col justify-evenly">
               <h2 class="text-lg font-bold text-center text-mgblack-100 py-4 font-freigtNeo">{{ experience.title }}</h2>
               <!-- <div class="border-b-4 border-mggold-100 pb-6 w-24 mx-auto mb-5"></div> -->
                   <div v-if="showDetails === index && expandedExperience == index " id="detailArea" class=" flex flex-col">
                       <p class="text-mggrey-200 py-5">{{ experience.description }}</p>
-                      <div class="  w-full bg-mgblack-100 py-3 rounded-t-md">
-                        <a href="https://api.whatsapp.com/send/?phone=9607998484&text&type=phone_number&app_absent=0" class="  mb-3 mt-2 p-3 w-full font-bold text-mggold-100">Talk to us</a>
+                      <div class="  w-full bg-mgblack-100 py-3 rounded-md mb-3">
+                        <a href="https://api.whatsapp.com/send/?phone=9607998484&text&type=phone_number&app_absent=0" class="  mb-3 mt-2 p-3 w-full font-bold text-mggold-100">Book with us</a>
                       </div>
                   </div>
                 </div>

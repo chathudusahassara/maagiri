@@ -17,6 +17,16 @@ class EventsControlller extends Controller
         $this->pageContentService = $pageContentService;
     }
 
+    public function index(){
+            
+            $type = 3; //Gallery
+    
+            // $media  = $this->pageContentService->getPageMedia(15, $type);
+            return Inertia::render('Events/EventsHome', [
+                //'gallery' => $media
+            ]);
+    }
+
     public function weddings(){
 
 
