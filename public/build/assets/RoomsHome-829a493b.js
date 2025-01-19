@@ -1,0 +1,1 @@
+import{_ as o}from"./_plugin-vue_export-helper-c27b6911.js";import{o as e,e as r}from"./app-e38b035a.js";const c={};function t(n,s){return e(),r("div",null,"Rooms")}const a=o(c,[["render",t]]);export{a as default};
