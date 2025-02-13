@@ -19,8 +19,7 @@ const activeDropdown = ref(null);
 const menuItems = ref([]);
 
 //get app url from env
-// const appUrl = import.meta.env.VITE_APP_URL;
-const appUrl = 'https://maagiri.orrlo.com/';
+const appUrl = import.meta.env.VITE_APP_URL;
 
 const showDropdown = (index) => {
       clearTimeout(dropdownTimeout.value);
