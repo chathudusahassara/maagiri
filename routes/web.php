@@ -10,6 +10,7 @@ use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\OffersController;
 use App\Http\Controllers\EventsControlller;
+use App\Http\Controllers\RoomsController;
 use Illuminate\Support\Facades\View;
 
 use Inertia\Inertia;
@@ -33,6 +34,8 @@ Route::get('offers/', [OffersController::class, 'index'])->name('offers');
 Route::get('privacy/',[PrivacyController::class, 'index'])->name('privacy');
 Route::get('terms/',[PrivacyController::class, 'terms'])->name('terms');
 Route::get('contact/', [ContactController::class, 'details'])->name('contact');
+
+Route::get('/rooms/', [RoomsController::class, 'index']);
 // Route::get('/rooms/executive', [RoomsController::class, 'executive'])->name('rooms/executive');
 // Route::get('/rooms/junior', [RoomsController::class, 'junior'])->name('rooms/junior');
 // Route::get('/rooms/ocean', [RoomsController::class, 'ocean'])->name('rooms/ocean');

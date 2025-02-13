@@ -87,11 +87,9 @@ const showDetails = ref(null);
         <p>Overlooking the ocean, Maagiri Hotel offers you ideal spaces for your gatherings and celebrations. A special aspect, the hotel being on the street where the arrival jetties are located provides your guests easy access to the event.</p>
         <p class=" mt-4">Whether it is an intimate wedding or a proud celebration, Maagiri Hotel provides its customers a joyous occasion, complete with all amenities such an event needs with a warm ambience and efficient service.</p>
     </div>
-  </div>
+</div>
 
-  <section>
-
-
+<section>
 <div class=" w-11/12 md:w-8/12 mx-auto -mt-20">
 <carousel :items-to-show="1">
     <slide v-for="image in gallery" :key="image" class="  bg-green-600">
