@@ -25,7 +25,7 @@
                     <source src="{{ asset('storage/d/maagiri_building.mp4') }}" />
                     Your browser does not support the video tag.
                     </video> -->
-                    <img src="/storage/d/maagiri_banner.jpg" data-color="black" alt="First Image">
+                    <img src="/images/maagiri_banner.jpg" data-color="black" alt="First Image">
                     <div class="carousel-caption">
                         <h3 class="orange-brand">{!! $bn->name !!}</h3>
                         <p>{{ $bn->details }}</p>
