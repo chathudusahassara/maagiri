@@ -6,26 +6,45 @@
         <button @click="closeOverlay" class="absolute top-2 right-2">
           <img src="https://maagirihotel.com/images/close-ico.png" width="30" height="30">
         </button>
-        <DialogTitle class="text-lg text-gray-50 font-bold ">Booking Enquiry</DialogTitle>
-        <form @submit.prevent="handleSubmit" class=" mt-8">
-          <div class="mb-4">
-            <label class="block text-sm font-medium text-white">NAME*</label>
-            <input type="text" v-model="formData.name" class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm" required />
-          </div>
-          <div class="mb-4">
-            <label class="block text-sm font-medium text-white">EMAIL ADDRESS</label>
-            <input type="email" v-model="formData.email" class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm" required />
-            <input type="hidden" v-model="formData.type" />
-          </div>
-          <div class="mb-4">
-            <label class="block text-sm font-medium text-white">MESSAGE</label>
-            <textarea v-model="formData.messageBody" rows="4" class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm"></textarea>
-            <input type="hidden" name="_token" value="OQeDR8pitB9eacJXCsr8NzjBpAazRrbod3qyl3Da">
-          </div>
-          <div class="flex justify-end">
-            <button type="submit" class=" bg-mggold-100 text-white py-2 px-4 rounded-md">SEND</button>
-          </div>
-        </form>
+        
+        <!-- Thank you message -->
+        <div v-if="showThankYou" class="text-center">
+          <DialogTitle class="text-lg text-gray-50 font-bold mb-4">Thank You!</DialogTitle>
+          <p class="text-white mb-6">Your enquiry has been submitted successfully. We will get back to you soon.</p>
+          <button @click="closeOverlay" class="bg-mggold-100 text-white py-2 px-4 rounded-md">
+            Close
+          </button>
+        </div>
+        
+        <!-- Booking form -->
+        <div v-else>
+          <DialogTitle class="text-lg text-gray-50 font-bold ">Booking Enquiry</DialogTitle>
+          <form @submit.prevent="handleSubmit" class=" mt-8">
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-white">NAME*</label>
+              <input type="text" v-model="formData.name" class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm" required />
+            </div>
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-white">EMAIL ADDRESS</label>
+              <input type="email" v-model="formData.email" class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm" required />
+              <input type="hidden" v-model="formData.type" />
+            </div>
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-white">MESSAGE</label>
+              <textarea v-model="formData.messageBody" rows="4" class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm"></textarea>
+              <input type="hidden" name="_token" value="OQeDR8pitB9eacJXCsr8NzjBpAazRrbod3qyl3Da">
+            </div>
+            <div class="flex justify-end">
+              <button 
+                type="submit" 
+                :disabled="isSubmitting"
+                class="bg-mggold-100 text-white py-2 px-4 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {{ isSubmitting ? 'SENDING...' : 'SEND' }}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </Dialog>
   </template>
@@ -50,17 +69,42 @@
           email: '',
           type: this.type,
           messageBody: ''
-        }
+        },
+        showThankYou: false,
+        isSubmitting: false
       };
     },
     methods: {
       closeOverlay() {
+        this.showThankYou = false;
+        this.resetForm();
         this.$emit('close');
       },
+      resetForm() {
+        this.formData = {
+          name: '',
+          email: '',
+          type: this.type,
+          messageBody: ''
+        };
+      },
       handleSubmit() {
+        this.isSubmitting = true;
+        
+        axios.post('/api/v1/enquire', this.formData)
+          .then(response => {
+            console.log(response.data);
+            this.showThankYou = true;
+          })
+          .catch(error => {
+            console.error(error);
+            // You might want to show an error message here
+          })
+          .finally(() => {
+            this.isSubmitting = false;
+          });
         // handle form submission
         console.log(this.formData);
-        this.closeOverlay();
       }
     },
     watch: {

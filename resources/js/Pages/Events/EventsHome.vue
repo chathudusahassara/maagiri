@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { PhForkKnife, PhCake, PhBowlFood } from "@phosphor-icons/vue";
+import { PhForkKnife, PhCake, PhNotebook } from "@phosphor-icons/vue";
 import MainLayout from '@/Layouts/MainLayout.vue';
 import BookingOverlay from '@/Components/BookingOverlay.vue';
 
@@ -56,21 +56,17 @@ const toggleExperience = (index) => {
   <div class="relative h-[80vh] w-full">
     <img id="bbImage" src="/images/pages/bg-dining.jpg" class="object-cover w-full h-full" />
     <div class=" h-96 w-full   absolute bottom-0 z-10"></div>
-    <div id="shortcutMenu" class="absolute z-20 bottom-5 right-5 bg-mgblack-100 text-mggrey-100 w-full md:w-4/12 text-center p-4 md:p-5 ">
-      <h2 class=" text-xl font-freigtNeo py-5">We can help plan your dining experiences</h2>
-      <div class="flex justify-around m-2 md:m-5 gap-2 items-center">
-        <button @click="openOverlay('dinner')" id="bookDinner" class="border border-gray-200 border-opacity-40 rounded-md p-5 flex flex-col items-center hover:shadow-2xl">
-          <PhForkKnife :size="32" class=" text-mggold-100" />
-          <p class="text-xs mt-3">BOOK A DINNER</p>
-        </button>
+    <div id="shortcutMenu" class="absolute z-20 bottom-5 right-5 bg-mgblack-100 text-mggrey-100 w-full md:w-auto text-left p-4 md:px-8 rounded-md ">
+      <h2 class=" text-xl font-freigtNeo py-3 pl-2">We can help plan your events</h2>
+      <div class="flex justify-start m-2 gap-3 items-left">
         <button @click="openOverlay('event')" id="bookEvent" class="border border-gray-200 border-opacity-40 rounded-md p-5 flex flex-col items-center hover:shadow-2xl">
           <PhCake :size="32" class=" text-mggold-100" />
           <p class="text-xs mt-3">BOOK AN EVENT</p>
         </button>
-        <button id="ourMenu" class="border border-gray-200 border-opacity-40 rounded-md p-5 flex flex-col items-center hover:shadow-2xl">
-          <PhBowlFood :size="32" class=" text-mggold-100" />
-          <a href="https://maagirihotel.com/storage/faru_menu.pdf"><p class="text-xs mt-3">OUR MENU</p></a>
-        </button>
+       <a href="https://maagirihotel.com/menu/weddings_celebrations_combined.pdf" class="border border-gray-200 border-opacity-40 rounded-md p-5 flex flex-col items-center hover:shadow-2xl">
+          <PhNotebook :size="32" class=" text-mggold-100" />
+          <p class="text-xs mt-3">FACT SHEET</p>
+        </a>
       </div>
     </div>
   </div>
@@ -85,19 +81,42 @@ const toggleExperience = (index) => {
         <p class=" mt-5">With our dedicated team, exceptional catering services, and a commitment to excellence, Maagiri Hotel is your ideal venue for hosting memorable events in the heart of the city.</p>
     </div>
   </div>
-  <div class=" md:w-11/12 xl:w-6/12 mx-auto -mt-20">
-    <div class=" px-8 md:px-0 lg:flex gap-8 justify-evenly">
-      <div class=" mb-10 shadow-md bg-mgblack-100 w-full flex flex-col items-center justify-between" v-for="dining in dinings" :key="dining.name">
-        <img id="bbImage" :src="dining.image" class="object-cover aspect-auto w-full " />
-        <div class="px-5 mt-8 text-center flex flex-col">
-          <h2 class=" text-2xl font-bold text-center text-mggrey-100">{{ dining.name }}</h2>
-          <div class=" border-b-4 border-mggold-100 pb-6 w-24 mx-auto mb-10"></div>
-          <p class=" text-mggrey-100">{{ dining.details }}</p>
-          <a :href="dining.link" class=" bg-mggold-100 text-black mb-3 mt-12 p-3 w-full text-center">Learn More</a>
+
+
+  <div class="w-full sm:w-11/12 lg:w-6/12 mx-auto -mt-20">
+  <div class="px-8 md:px-0 lg:flex gap-8 justify-evenly">
+    <div
+      class="shadow-md bg-mgblack-100 w-full mb-8 md:mb-0 flex flex-col h-[620px]"
+      v-for="dining in dinings"
+      :key="dining.name"
+    >
+      <!-- Image -->
+      <img
+        id="bbImage"
+        :src="dining.image"
+        class="object-cover aspect-auto w-full"
+      />
+
+      <!-- Content -->
+      <div class="flex flex-col justify-between flex-1 px-5 py-8 text-center">
+        <!-- Title -->
+        <div>
+          <h2 class="text-2xl font-bold text-mggrey-100">{{ dining.name }}</h2>
+          <div class="border-b-4 border-mggold-100 w-24 mx-auto my-4"></div>
+        </div>
+
+        <!-- Description -->
+        <p class="text-mggrey-100 flex-grow mt-5">{{ dining.details }}</p>
+
+        <!-- Button -->
+        <div class="mt-6">
+          <a :href="dining.link" class="bg-mggold-100 w-full p-3 text-black block text-center mt-6">Learn More</a>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 
 
 

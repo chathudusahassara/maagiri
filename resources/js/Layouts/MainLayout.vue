@@ -124,6 +124,7 @@ const closeNav = () => {
                     
                         <li v-for="(item, index) in menuItems" :key="index" class="dropdown py-9 bg-mgblack-100" @mouseenter="showDropdown(index)" @mouseleave="hideDropdown(index)"
                             :class="{ 'active': activeDropdown === index }">
+                            <div v-if="item.name != 'Home'">
                             <a :href="appUrl+item.link_name" class="dropdown-toggle">{{ item.name }}</a>
                             <transition name="fade" v-if="item.has_submenu">
                                 <ul v-show="activeDropdown === index && isDropdownVisible && item.submenus != null" class="dropdown-menu whitespace-nowrap">
@@ -132,6 +133,7 @@ const closeNav = () => {
                                 </li>
                                 </ul>
                             </transition>
+                            </div>
                         </li>
                 </div>
             </div>

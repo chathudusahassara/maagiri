@@ -10,7 +10,15 @@ class PageContentController extends Controller
     //
     public function index($pageName){
 
+        if($pageName == 'wellness'){
+            $pageName = 'fitness_gym';
+        }
+
+
         $pageId = (new PageController)->get_page_name_by_id($pageName);
+
+
+
         //type 1 = gallery / type 2 = sub banner
         $type = 1;
         $d = PageContent::where('pages_id',$pageId)->first();

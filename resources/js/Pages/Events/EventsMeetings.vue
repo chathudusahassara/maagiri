@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { PhForkKnife, PhCake, PhBowlFood } from "@phosphor-icons/vue";
+import { PhForkKnife, PhCake, PhNotebook } from "@phosphor-icons/vue";
 import MainLayout from '@/Layouts/MainLayout.vue';
 import BookingOverlay from '@/Components/BookingOverlay.vue';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
@@ -55,15 +55,15 @@ const showDetails = ref(null);
   <div class="relative h-[80vh] w-full">
     <img id="bbImage" src="/images/pages/events-bg.jpg" class="object-cover w-full h-full" />
     <div class=" h-96 w-full   absolute bottom-0 z-10"></div>
-    <div id="shortcutMenu" class="absolute z-20 bottom-5 right-5 bg-mgblack-100 text-mggrey-100 text-center px-10 py-5 ">
-      <h2 class=" text-xl font-freigtNeo py-5">We can help plan your meetings & conferences</h2>
-      <div class="flex justify-evenly m-2 md:m-5 gap-10">
+    <div id="shortcutMenu" class="absolute z-20 bottom-5 right-5 bg-mgblack-100 text-mggrey-100 w-full md:w-auto text-left p-4 md:px-8 rounded-md ">
+      <h2 class=" text-xl font-freigtNeo py-3 pl-2">We can help plan your dining experiences</h2>
+      <div class="flex justify-start m-2 gap-3 items-left">
         <button @click="openOverlay('dinner')" id="bookDinner" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl w-full">
           <PhForkKnife :size="32" class=" text-mggold-100" />
           <p class="text-xs mt-3">BOOK A VENUE</p>
         </button>
-        <a href="http://maagiri.orrlo.com/files/factsheet_meetings.pdf" id="bookEvent" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl w-full">
-          <PhCake :size="32" class=" text-mggold-100" />
+        <a href="https://maagirihotel.com/menu/meetings_conferences_fact_sheet.pdf" id="bookEvent" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl w-full">
+          <PhNotebook :size="32" class=" text-mggold-100" />
           <p class="text-xs mt-3">FACT SHEET</p>
         </a>
       </div>
@@ -111,7 +111,43 @@ const showDetails = ref(null);
     </div>
 </div>
 
-  <div class=" w-full lg:w-8/12 mx-auto ">
+
+<div class="w-full sm:w-11/12 lg:w-8/12 mx-auto ">
+  <div class="px-8 md:px-0 lg:flex gap-8 justify-evenly">
+    <div
+      class="shadow-md bg-mgblack-100 w-full mb-8 md:mb-0 flex flex-col h-[680px]"
+      v-for="dining in dinings"
+      :key="dining.name"
+    >
+      <!-- Image -->
+      <img
+        id="bbImage"
+        :src="dining.image"
+        class="object-cover aspect-auto w-full"
+      />
+
+      <!-- Content -->
+      <div class="flex flex-col justify-between flex-1 px-5 py-8 text-center">
+        <!-- Title -->
+        <div>
+          <h2 class="text-2xl font-bold text-mggrey-100">{{ dining.name }}</h2>
+          <div class="border-b-4 border-mggold-100 w-24 mx-auto my-4"></div>
+        </div>
+
+        <!-- Description -->
+        <p class="text-mggrey-100 flex-grow mt-5">{{ dining.details }}</p>
+
+        <!-- Button -->
+        <div class="mt-6">
+          <a href="https://api.whatsapp.com/send/?phone=9607998484&text&type=phone_number&app_absent=0" class="bg-mggold-100 w-full p-3 text-black block text-center mt-6">Talk to us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- <div class=" w-full lg:w-8/12 mx-auto ">
     <div class=" px-8 md:px-0 lg:flex gap-8 justify-evenly">
  
 
@@ -129,7 +165,7 @@ const showDetails = ref(null);
       </div>
 
     </div>
-  </div>
+  </div> -->
 </section>
 
 

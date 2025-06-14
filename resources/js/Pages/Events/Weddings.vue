@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { PhForkKnife, PhCake, PhBowlFood } from "@phosphor-icons/vue";
+import { PhForkKnife, PhCake, PhNotebook } from "@phosphor-icons/vue";
 import MainLayout from '@/Layouts/MainLayout.vue';
 import BookingOverlay from '@/Components/BookingOverlay.vue';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
@@ -70,8 +70,8 @@ const showDetails = ref(null);
           <PhForkKnife :size="32" class=" text-mggold-100" />
           <p class="text-xs mt-3">BOOK A VENUE</p>
         </button>
-        <a href="http://maagiri.orrlo.com/files/factsheet_weddings.pdf" id="bookEvent" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl w-full">
-          <PhCake :size="32" class=" text-mggold-100" />
+        <a href="https://maagirihotel.com/menu/weddings_fact_sheet.pdf" id="bookEvent" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl w-full">
+          <PhNotebook :size="32" class=" text-mggold-100" />
           <p class="text-xs mt-3">FACT SHEET</p>
         </a>
       </div>

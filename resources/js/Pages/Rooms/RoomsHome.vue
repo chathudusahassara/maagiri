@@ -24,22 +24,22 @@ const closeOverlay = () => {
 
 const dinings = [
   {
-    name:'Muraka Maalam',
-    details: 'Perched on the terrace of Maagiri Hotel, Muraka Maalam offers an impressive and unforgettable event space. Spanning over 60sqm, it accomodates various setups, including theater, classroom, banquet, and boardroom styles.',
-    image: '/images/pages/events/events/muraka-maalam.jpg',
-    link: '/peak'
+    name:'Executive Suite',
+    details: 'Six of its kind, the Executive Suite ensures the utmost luxury and comfort for its guests.',
+    image: 'https://maagirihotel.com/storage/d/9VKmqAdT0D8JdM5zk0arPnnJNW9s1MMH9hXvcHtS.jpg',
+    link: '/executive_suite'
   },
   {
-    name:'Peak - 9th Floor',
-    details: 'With floor-to-ceiling windows offering stunning sea views, this versatile venu is perfect for celebrations or conferences of up to 50 guests. Equipped with built-in video projectors, it can be adapted to various seating configurations, ensuring a tailored experience for any event.',
-    image: '/images/pages/events/events/9meetin-room.jpg',
-    link: '/faru'
+    name:'Junior Suite',
+    details: 'Located on the eastern wing of the building, Junior Suites add a breath of fresh air to your stay at Maagiri Hotel, with nothing but the ocean blues surrounding the suites.',
+    image: 'https://maagirihotel.com/storage/d/pD7SbtBLEDr11q94vCOPDvZsIXDoavxIdW3PMcWo.jpg',
+    link: '/Junior_Suite'
   },
   {
-    name:'Meeting Room - 2nd Floor',
-    details: 'This intimate event space, perfect for board meetings or small gatherings of up to 22 guests, offers a unique atomsphere and features a built-in 55" TV for seamless presentations and discussions.',
-    image: '/images/pages/events/events/2meeting-room.jpg',
-    link: '/coffee_curve'
+    name:'Premier Room',
+    details: 'Immerse yourself in Male’ City and enjoy what it truly means to be in this city, by taking in the view of busiest districts in the city.',
+    image: 'https://maagirihotel.com/storage/d/ErxJ0mScKrNh28ns4Qt8pgrOkg2Em8GwQfkgbXJ6.jpg',
+    link: '/premier_room'
   }
 ];
 
@@ -53,21 +53,9 @@ const showDetails = ref(null);
 <template>
 <MainLayout>
   <div class="relative h-[80vh] w-full">
-    <img id="bbImage" src="/images/pages/events-bg.jpg" class="object-cover w-full h-full" />
+    <img id="bbImage" src="https://maagirihotel.com/storage/d/9VKmqAdT0D8JdM5zk0arPnnJNW9s1MMH9hXvcHtS.jpg" class="object-cover w-full h-full" />
     <div class=" h-96 w-full   absolute bottom-0 z-10"></div>
-    <div id="shortcutMenu" class="absolute z-20 bottom-5 right-5 bg-mgblack-100 text-mggrey-100 text-center px-10 py-5 ">
-      <h2 class=" text-xl font-freigtNeo py-5">We can help plan your meetings & conferences</h2>
-      <div class="flex justify-evenly m-2 md:m-5 gap-10">
-        <button @click="openOverlay('dinner')" id="bookDinner" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl w-full">
-          <PhForkKnife :size="32" class=" text-mggold-100" />
-          <p class="text-xs mt-3">BOOK A VENUE</p>
-        </button>
-        <a href="http://maagiri.orrlo.com/files/factsheet_meetings.pdf" id="bookEvent" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl w-full">
-          <PhCake :size="32" class=" text-mggold-100" />
-          <p class="text-xs mt-3">FACT SHEET</p>
-        </a>
-      </div>
-    </div>
+
   </div>
 
   <div class=" w-full bg-mgblack-100 ">
@@ -76,8 +64,10 @@ const showDetails = ref(null);
         <h2 class=" text-5xl mb-10 text-white font-freigtNeo ">Accomodation</h2>
         <div class="border-b-4 border-mggold-100 w-16"></div>
         </div>
-        <p>Be it a corporate event or a business meeting, Maagiri Hotel is proud to host corporate guests for a perfect stay every time. With your executive needs in mind, complete with high-speed internet, Maagiri Hotel provides you with ideal space for your important events and functions.</p>
-        <p class=" mt-4">Whether you are in Male’ for a meeting or in between flights or looking to organize a lovely weekend with a mix of business and leisure, Maagiri hospitality is the best that Male’ City can offer.</p>
+        <p>Maagiri Hotel offers 51 well-appointed rooms and suites, designed to provide the perfect blend of comfort, style, and functionality. Whether you are visiting for business or leisure, our rooms offer a serene escape in the heart of the city. With options featuring both stunning sea views and vibrant cityscapes guests can enjoy a relaxing ambiance complemented by modern amenities.</p>
+        <p class=" mt-4">From spacious Executive and Junior Suites to cozy Superior and Premier Rooms, each space is thoughtfully designed to meet the needs of every traveler. With comfortable bedding, high-speed Wi-Fi, and in-room dining, Maagiri Hotel ensures a seamless stay.
+
+</p>
     </div>
   </div>
 
@@ -99,25 +89,40 @@ const showDetails = ref(null);
     </div>
 </div>
 
-  <div class=" w-full lg:w-8/12 mx-auto ">
-    <div class=" px-8 md:px-0 lg:flex gap-8 justify-evenly">
- 
+<div class="w-full lg:w-8/12 mx-auto">
+  <div class="px-8 md:px-0 lg:flex gap-8 justify-evenly">
+    <div
+      class="shadow-md bg-mgblack-100 w-full mb-8 md:mb-0 flex flex-col h-[620px]"
+      v-for="dining in dinings"
+      :key="dining.name"
+    >
+      <!-- Image -->
+      <img
+        id="bbImage"
+        :src="dining.image"
+        class="object-cover aspect-auto w-full"
+      />
 
-      <div class=" mb-10 shadow-md bg-mgblack-100 w-full flex flex-col justify-between" v-for="dining in dinings" :key="dining.name">
-        <img id="bbImage" :src="dining.image" class="object-cover aspect-auto w-full " />
-        <div class="mt-5">
-          <h2 class=" text-2xl font-bold text-center text-mggrey-100">{{ dining.name }}</h2>
-          <div class=" border-b-4 border-mggold-100 pb-6 w-24 mx-auto mb-10"></div>
+      <!-- Content -->
+      <div class="flex flex-col justify-between flex-1 px-5 py-8 text-center">
+        <!-- Title -->
+        <div>
+          <h2 class="text-2xl font-bold text-mggrey-100">{{ dining.name }}</h2>
+          <div class="border-b-4 border-mggold-100 w-24 mx-auto my-4"></div>
         </div>
-        <div class="px-5 mt-8 text-center flex flex-col">
-          
-          <p class=" text-mggrey-100">{{ dining.details }}</p>
-          <a href="https://api.whatsapp.com/send/?phone=9607998484&text&type=phone_number&app_absent=0" class=" bg-mggold-100 text-black mb-6 mt-12 p-3">Talk to us</a>
+
+        <!-- Description -->
+        <p class="text-mggrey-100 flex-grow mt-5">{{ dining.details }}</p>
+
+        <!-- Button -->
+        <div class="mt-6">
+          <a :href="dining.link" class="bg-mggold-100 w-full p-3 text-black block text-center mt-6">Learn More</a>
         </div>
       </div>
-
     </div>
   </div>
+</div>
+
 </section>
 
 
