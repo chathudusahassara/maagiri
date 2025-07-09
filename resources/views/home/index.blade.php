@@ -219,6 +219,9 @@
                 </div>
         </section>
 
+        <!-- TODO: Change Faru image BSP01846 (1) (1) -->
+        <!-- TODO: Change weddings and celebrations 12 (1).jpg -->
+
 
         <section id="media-container">
                 <div class="container-fluid d-none d-sm-block">

@@ -77,17 +77,48 @@ const experiences = [
 
 const expandedExperience = ref(null);
 const showDetails = ref(null);
+const isTransitioning = ref(false);
 
 const toggleExperience = (index) => {
+    // Prevent rapid clicking during transitions
+    if (isTransitioning.value) return;
     
-    showDetails.value = null
-
-    expandedExperience.value = expandedExperience.value === index ? null : index;
-
-    setTimeout(() => {
-        showDetails.value = showDetails.value === index ? null : index;
-        }, 1000);
-
+    if (expandedExperience.value === index) {
+        // Closing the card - smooth collapse
+        isTransitioning.value = true;
+        showDetails.value = null;
+        
+        setTimeout(() => {
+            expandedExperience.value = null;
+            isTransitioning.value = false;
+        }, 400);
+    } else {
+        // Opening a new card
+        isTransitioning.value = true;
+        
+        if (expandedExperience.value !== null) {
+            // Smooth transition from one card to another
+            showDetails.value = null;
+            
+            setTimeout(() => {
+                expandedExperience.value = index;
+                
+                // Slight delay for the card to settle before showing details
+                setTimeout(() => {
+                    showDetails.value = index;
+                    isTransitioning.value = false;
+                }, 300);
+            }, 250);
+        } else {
+            // Opening first card - immediate response
+            expandedExperience.value = index;
+            
+            setTimeout(() => {
+                showDetails.value = index;
+                isTransitioning.value = false;
+            }, 250);
+        }
+    }
 };
 
 
@@ -157,31 +188,37 @@ const toggleExperience = (index) => {
     </div>
 </div>
 <div class=" w-11/12 mx-auto pb-36">
-  <div class="flex flex-wrap gap-4 justify-center items-start">
+  <div class="flex flex-nowrap md:flex-wrap gap-4 justify-start md:justify-center items-start overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 scrollbar-hide">
 
     <div
   id="experienceSliderItem"
   v-for="(experience, index) in experiences"
   :key="experience.title"
-  class="w-[300px] border border-gray-200 shadow-md cursor-pointer text-center mb-5 transition-all duration-300 relative"
-  :class="expandedExperience === index ? 'scale-105 z-10' : ''"
+  class="w-[280px] md:w-[300px] flex-shrink-0 border border-gray-200 shadow-lg text-center mb-5 transition-all duration-500 ease-out relative overflow-hidden group hover:border-mggold-100"
+  :class="[
+    expandedExperience === index ? 'scale-105 z-10 shadow-2xl' : 'hover:scale-105 hover:shadow-2xl',
+    isTransitioning ? 'cursor-wait' : 'cursor-pointer'
+  ]"
   @click="toggleExperience(index)"
 >
   <div class="flex flex-col justify-between bg-white overflow-hidden rounded-md">
-    <img
-      :src="experience.image"
-      class="object-cover w-full transition-all duration-500"
-      :class="expandedExperience === index ? 'h-24' : 'h-80'"
-    />
+    <div class="overflow-hidden">
+      <img
+        :src="experience.image"
+        class="object-cover w-full transition-all duration-700 ease-out group-hover:scale-110"
+        :class="expandedExperience === index ? 'h-24' : 'h-80'"
+      />
+    </div>
     <div class="px-3 mt-3 text-center flex flex-col justify-evenly">
-      <h2 class="text-lg font-bold text-center text-mgblack-100 py-4 font-freigtNeo">
+      <h2 class="text-lg font-bold text-center text-mgblack-100 py-4 font-freigtNeo transition-all duration-300 group-hover:text-mggold-100">
         {{ experience.title }}
       </h2>
+
 
       <div
         v-if="showDetails === index && expandedExperience === index"
         id="detailArea"
-        class="flex flex-col"
+        class="flex flex-col animate-fadeIn"
       >
         <p class="text-mggrey-200 py-5">{{ experience.description }}</p>
 
@@ -192,7 +229,7 @@ const toggleExperience = (index) => {
         <div class="w-full bg-mgblack-100 py-1 rounded-md mb-3">
           <a
             href="https://api.whatsapp.com/send/?phone=9607998484&text&type=phone_number&app_absent=0"
-            class="mb-3 mt-2 p-3 w-full font-bold text-mggold-100 block"
+            class="mb-2 mt-1 py-2 px-3 w-full font-bold text-mggold-100 block"
           >
             Book with us
           </a>
