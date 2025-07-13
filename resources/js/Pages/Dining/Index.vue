@@ -154,9 +154,10 @@ const toggleExperience = (index) => {
     </div>
   </div>
   
-  <div class=" md:w-11/12 xl:w-8/12 mx-auto -mt-20">
-    <div class="px-8 md:px-0 lg:flex gap-8 justify-evenly">
-      <div class="shadow-md bg-mgblack-100 w-full mb-8 md:mb-0 flex flex-col h-[620px]" v-for="dining in dinings" :key="dining.name">
+  <div class="w-11/12 mx-auto -mt-20">
+    <div class="flex flex-nowrap gap-4 justify-start xl:justify-center items-start overflow-x-auto  pb-4 md:pb-0 scrollbar-hide px-5">
+
+      <div class="shadow-md bg-mgblack-100 mb-8 md:mb-0 flex flex-col xl:h-[610px] h-[600px] w-[320px] md:w-[350px] flex-shrink-0" v-for="dining in dinings" :key="dining.name">
         <img id="bbImage" :src="dining.image" class="object-cover aspect-auto w-full" />
 
         <div class="flex flex-col justify-between flex-1 px-5 py-8 text-center">
@@ -172,8 +173,9 @@ const toggleExperience = (index) => {
             <a :href="dining.link" class="bg-mggold-100 w-full p-3 text-black block text-center mt-6">Learn More</a>
           </div>
         </div>
-        
       </div>
+
+
     </div>
   </div>
 
@@ -187,8 +189,8 @@ const toggleExperience = (index) => {
         <p class=" text-mgblack-200">Discover exceptional dining at Maagiri Hotel, where we offer a variety of culinary experiences to satisfy every palate. Enjoy a range of options, from casual evening tea treats to exquisite theme buffets.</p>
     </div>
 </div>
-<div class=" w-11/12 mx-auto pb-36">
-  <div class="flex flex-nowrap md:flex-wrap gap-4 justify-start md:justify-center items-start overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 scrollbar-hide">
+<div class=" w-full md:mx-6 mx-auto pb-36">
+  <div class="flex flex-nowrap gap-4 justify-start md:justify-start xl:justify-center items-start overflow-x-auto  pb-4 md:pb-0 scrollbar-hide">
 
     <div
   id="experienceSliderItem"
