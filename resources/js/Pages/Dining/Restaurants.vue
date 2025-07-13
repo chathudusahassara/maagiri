@@ -95,7 +95,7 @@
 
         <!-- Enquire Button -->
         <div class="mt-12 flex justify-center">
-          <button class="bg-mggold-100 hover:bg-mggold-100 text-white px-8 py-3 rounded-full transition-colors">
+          <button @click="openWhatsapp" class="bg-mggold-100 hover:bg-mggold-100 text-white px-8 py-3 rounded-full transition-colors">
             ENQUIRE
           </button>
         </div>
@@ -155,6 +155,10 @@ const nextImage = () => {
 
 const previousImage = () => {
   currentImageIndex.value = currentImageIndex.value === 0 ? images.length - 1 : currentImageIndex.value - 1
+}
+
+const openWhatsapp = () => {
+  window.open('https://api.whatsapp.com/send/?phone=9607998484', '_blank')
 }
 </script>
 
