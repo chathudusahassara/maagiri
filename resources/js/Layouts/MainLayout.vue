@@ -274,10 +274,10 @@ const closeNav = () => {
                       <ul class=" block  ml-12 mt-10">
                         <Disclosure v-for=" item in menuItems" :key=item as="div" class=" mb-8"  >
                             <DisclosureButton class=" block text-gray-50 font-freigtNeo text-3xl">
-                                <a :href="appUrl+item.link_name">{{ item.name  }}</a>
+                                <a :href="appUrl+item.link">{{ item.name  }}</a>
                             </DisclosureButton>
                             <DisclosurePanel v-if="item.submenus.length > 0" class="px-4 pb-2 pt-4 text-sm text-gray-500 block">
-                                <a v-for="subitem in item.submenus" :key="subitem" class=" block text-xl text-gray-50 mb-4" :href="appUrl+subitem.link_name">{{ subitem.name }}</a>
+                                <a v-for="subitem in item.submenus" :key="subitem" class=" block text-xl text-gray-50 mb-4" :href="appUrl+subitem.link">{{ subitem.name }}</a>
                             </DisclosurePanel>
                         </Disclosure>
                       </ul>

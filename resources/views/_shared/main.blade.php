@@ -238,7 +238,7 @@
                                     <ul style="margin:0; padding:0;" class="collapse" id="{{ $m->name }}">
                                     @foreach($submenu as $sb)
                                         @if($sb->parent_id == $m->id)
-                                            <li><a href="{{ url($sb->link_name) }}" href="">{{ $sb->name }}</a></li>
+                                            <li><a href="{{ url($sb->link) }}" href="">{{ $sb->name }}</a></li>
                                         @endif
                                     @endforeach
                                     </ul>

@@ -56,7 +56,7 @@
             <img 
               :src="'/storage/d/'+images[currentImageIndex]" 
               :alt="`Coffee Curve Image ${currentImageIndex + 1}`"
-              class="w-full h-[650px] object-cover"
+              class="w-full md:h-[650px] h-[400px] object-cover"
             />
             
             <!-- Navigation Arrows -->
@@ -84,11 +84,9 @@
         <div id="openingHours" class=" text-center mt-8">
             <h2 class="text-2xl font-freigtNeo">Opening Hours</h2>
             <div class="flex justify-center mt-3">
-                <ul class="flex gap-8 text-mggrey-200">
-                    <li>Monday - Friday</li>
-                    <li>10:00 AM - 10:00 PM</li>
-                    <li>Saturday - Sunday</li>
-                    <li>10:00 AM - 10:00 PM</li>
+                <ul class="md:flex gap-8 text-mggrey-200">
+                    <li>Monday - Friday / 10:00 AM - 10:00 PM</li>
+                    <li>Saturday - Sunday / 10:00 AM - 10:00 PM</li>
                 </ul>
             </div>
         </div>
