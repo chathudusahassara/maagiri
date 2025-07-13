@@ -11,18 +11,14 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\OffersController;
 use App\Http\Controllers\EventsControlller;
 use App\Http\Controllers\RoomsController;
+use App\Http\Controllers\DiningController;
+
 use Illuminate\Support\Facades\View;
 
-use Inertia\Inertia;
 
 
-Route::get('/dining', function () {
-    return Inertia::render('Dining/Index', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/dining', [DiningController::class, 'index']);
+Route::get('/dining/{slug}', [DiningController::class, 'restaurants']);
 
 Route::get('/events/', [EventsControlller::class, 'index'])->name('events');
 Route::get('/events/meetings', [EventsControlller::class, 'events']);

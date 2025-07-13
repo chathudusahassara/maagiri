@@ -129,7 +129,7 @@ const closeNav = () => {
                             <transition name="fade" v-if="item.has_submenu">
                                 <ul v-show="activeDropdown === index && isDropdownVisible && item.submenus != null" class="dropdown-menu whitespace-nowrap">
                                 <li v-for="(submenu, subIndex) in item.submenus" :key="subIndex" class=" w-full py-1">
-                                    <a :href="appUrl+submenu.link_name">{{ submenu.name }}</a>
+                                    <a :href="appUrl+submenu.link">{{ submenu.name }}</a>
                                 </li>
                                 </ul>
                             </transition>

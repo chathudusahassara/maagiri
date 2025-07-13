@@ -21,19 +21,19 @@ const dinings = [
     name:'Peak',
     details: 'A fantastic terrace with panoramic views of the ocean, Peak with a lounge as well lends an air of exclusivity with unpretentious service.',
     image: '/images/pages/peak-rest-ed.jpg',
-    link: '/peak'
+    link: '/dining/peak'
   },
   {
     name:'Faru',
     details: 'Offering choices of semi-fine dining with stylish buffets, express meals and a la carte dishes.',
     image: '/images/pages/faru-rest-ed.jpg',
-    link: '/faru'
+    link: '/dining/faru'
   },
   {
     name:'Coffee Curve',
     details: 'Coffee Curve with its jazzier vibes is the perfect place to grab that quick cup of coffee or have a quick mid-day snack.',
     image: '/images/pages/coffee-curve-ed.jpg',
-    link: '/coffee_curve'
+    link: '/dining/coffee_curve'
   }
 ];
 
