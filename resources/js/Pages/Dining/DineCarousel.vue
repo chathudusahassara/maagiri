@@ -1,5 +1,5 @@
 <template>
-    <div class="relative w-full mx-auto px-0 md:px-4">
+    <div class="relative w-full mx-auto px-2 md:px-4">
   
       <div 
         class="flex justify-center items-end gap-4 overflow-hidden min-h-[640px] carousel-container pb-2 touch-pan-x"
@@ -144,12 +144,22 @@ const props = defineProps({
   // Touch gesture handlers
   const handleTouchStart = (e) => {
     touchStartX.value = e.touches[0].clientX
+    touchEndX.value = e.touches[0].clientX // Initialize end position
     isDragging.value = true
   }
   
   const handleTouchMove = (e) => {
     if (!isDragging.value) return
-    e.preventDefault()
+    
+    const currentX = e.touches[0].clientX
+    const currentY = e.touches[0].clientY
+    const deltaX = Math.abs(currentX - touchStartX.value)
+    const deltaY = Math.abs(currentY - e.touches[0].clientY)
+    
+    // Only prevent default if it's clearly a horizontal swipe
+    if (deltaX > deltaY && deltaX > 10) {
+      e.preventDefault()
+    }
   }
   
   const handleTouchEnd = (e) => {
@@ -161,13 +171,20 @@ const props = defineProps({
     const swipeDistance = touchStartX.value - touchEndX.value
     const minSwipeDistance = 50 // Minimum distance for a swipe
     
+    // Only trigger swipe if it's a clear horizontal gesture
     if (Math.abs(swipeDistance) > minSwipeDistance) {
-      if (swipeDistance > 0) {
-        // Swiped left - next slide
-        nextSlide()
-      } else {
-        // Swiped right - previous slide
-        prevSlide()
+      const deltaX = Math.abs(swipeDistance)
+      const deltaY = Math.abs(e.changedTouches[0].clientY - e.touches[0].clientY)
+      
+      // Only trigger if horizontal movement is significantly greater than vertical
+      if (deltaX > deltaY * 2) {
+        if (swipeDistance > 0) {
+          // Swiped left - next slide
+          nextSlide()
+        } else {
+          // Swiped right - previous slide
+          prevSlide()
+        }
       }
     }
   }
