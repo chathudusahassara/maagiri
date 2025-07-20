@@ -93,13 +93,16 @@
 
         <!-- Enquire Button -->
         <div class="mt-12 flex justify-center">
-          <button @click="openWhatsapp" class="bg-mggold-100 hover:bg-mggold-100 text-white px-8 py-3 rounded-full transition-colors">
+          <button @click="showOverlay = true" class="bg-mggold-100 hover:bg-mggold-100 text-white px-8 py-3 rounded-full transition-colors">
             ENQUIRE
           </button>
         </div>
     </section>
     
   </div>
+
+  <BookingOverlay :isVisible="showOverlay" :type="overlayType" @close="closeOverlay" />
+
     </MainLayout>
 </template>
 <script setup>
@@ -107,12 +110,19 @@ import { ref, computed } from 'vue'
 import { usePage } from '@inertiajs/vue3'
 import MainLayout from '@/Layouts/MainLayout.vue';
 import BookingBar from '@/Pages/BookingBar.vue';
+import BookingOverlay from '@/Components/BookingOverlay.vue';
 
 const props = defineProps({
     pageContent: Object,
     pageMedia: Array
 })
 
+const showOverlay = ref(false)
+const overlayType = ref('event')
+
+const closeOverlay = () => {
+  showOverlay.value = false
+}
 // Restaurant navigation with dynamic active state
 const restaurants = [
     { name: 'Coffee Curve', path: '/dining/coffee_curve' },
@@ -155,8 +165,9 @@ const previousImage = () => {
   currentImageIndex.value = currentImageIndex.value === 0 ? images.length - 1 : currentImageIndex.value - 1
 }
 
-const openWhatsapp = () => {
-  window.open('https://api.whatsapp.com/send/?phone=9607998484', '_blank')
+const openModal = () => {
+  // window.open('https://api.whatsapp.com/send/?phone=9607998484', '_blank')
+  emit('openModal', 'booking')
 }
 </script>
 

@@ -29,7 +29,7 @@
                 <div v-if="card.has_menu">
                  <a href="https://maagirihotel.com/menu/private_dining_menu.pdf" class=" w-full mb-8 font-bold text-black block text-center">View Menu - Mvr 600/-</a>
                 </div>
-                <a :href="card.link" class="bg-black text-white px-6 py-2 text-sm tracking-wide hover:bg-gray-800 transition">Book with us</a>
+                <a href="https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0" class="bg-black text-white px-6 py-2 text-sm tracking-wide hover:bg-gray-800 transition">Book with us</a>
               </div>
             </div>
   
@@ -77,7 +77,7 @@
                <a href="https://maagirihotel.com/menu/private_dining_menu.pdf" class="text-sm font-bold text-black block">View Menu - Mvr 600/-</a>
              </div>
              
-             <a :href="card.link" class="bg-black text-white px-4 py-2 text-sm rounded-md hover:bg-gray-800 transition block mt-auto">
+             <a href="https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0" class="bg-black text-white px-4 py-2 text-sm rounded-md hover:bg-gray-800 transition block mt-auto">
                Book with us
              </a>
                         </div>

@@ -47,6 +47,10 @@ const dinings = [
 const expandedExperience = ref(null);
 const showDetails = ref(null);
 
+const openWhatsapp = () => {
+  window.open('https://api.whatsapp.com/send/?phone=9607228484', '_blank')
+}
+
 
 </script>
 
@@ -58,7 +62,7 @@ const showDetails = ref(null);
     <div id="shortcutMenu" class="absolute z-20 bottom-5 right-5 bg-mgblack-100 text-mggrey-100 w-full md:w-auto text-left p-4 md:px-8 rounded-md ">
       <h2 class=" text-xl font-freigtNeo py-3 pl-2">We can help plan your dining experiences</h2>
       <div class="flex justify-start m-2 gap-3 items-left">
-        <button @click="openOverlay('dinner')" id="bookDinner" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl w-full">
+        <button @click="openWhatsapp" id="bookDinner" class="border border-gray-200 rounded-md p-5 flex flex-col items-center hover:shadow-2xl w-full">
           <PhForkKnife :size="32" class=" text-mggold-100" />
           <p class="text-xs mt-3">BOOK A VENUE</p>
         </button>
