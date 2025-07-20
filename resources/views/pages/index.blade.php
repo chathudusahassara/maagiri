@@ -103,10 +103,6 @@ border: none;
                                     <div class="orange-brand"></div>
                                     {!! $contents->body !!}
                                     <div class="spacer-2x"></div>
-                                    <div class="row text-center flex-row">
-                                        <div class="col-md-6">MENU</div>
-                                        <div class="col-md-6">OPENING HOURS</div>
-                                    </div>
                                     <!-- <div class="breads">28m <span>/</span> 6 to 9 Floor <span>/</span> Sea View <span>/</span> King Size Bed <span>/</span> Max 2 Adults</div> -->
                                 </div>
                             </div>

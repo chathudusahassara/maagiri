@@ -37,7 +37,7 @@ const dinings = [
   },
   {
     name:'Premier Room',
-    details: 'Immerse yourself in Male’ City and enjoy what it truly means to be in this city, by taking in the view of busiest districts in the city.',
+    details: 'Immerse yourself in Male’ City and enjoy what it truly means to be in this city, by taking in the view of busiest districts in the city. Find solace in these warmly lit rooms and its light grey hues, while you take your mid-day break during your busy day in the city.',
     image: 'https://maagirihotel.com/storage/d/ErxJ0mScKrNh28ns4Qt8pgrOkg2Em8GwQfkgbXJ6.jpg',
     link: '/premier_room'
   }
@@ -85,7 +85,7 @@ const showDetails = ref(null);
         <h2 class=" text-5xl mb-10 text-mgblack-100 font-freigtNeo ">Your Custom Tailored Stay</h2>
         <div class="border-b-4 border-mggold-100 w-16"></div>
         </div>
-        <p class=" text-mgblack-200">Discover exceptional dining at Maagiri Hotel, where we offer a variety of culinary experiences to satisfy every palate. Enjoy a range of options, from casual evening tea treats to exquisite theme buffets.</p>
+        <p class=" text-mgblack-200">Discover a haven of style and comfort in our elegantly appointed rooms, designed for relaxation and ease - the perfect retreat after a bustling day. Choose from our Premier rooms with refined comfort, or Junior and Executive Suites with separate living space for ultimate privacy and sophistication.</p>
     </div>
 </div>
 

@@ -112,7 +112,7 @@ const showDetails = ref(null);
         <h2 class=" text-5xl mb-10 text-mgblack-100 font-freigtNeo ">Celebration Venue</h2>
         <div class="border-b-4 border-mggold-100 w-16"></div>
         </div>
-        <p class=" text-mgblack-200">Discover exceptional dining at Maagiri Hotel, where we offer a variety of culinary experiences to satisfy every palate. Enjoy a range of options, from casual evening tea treats to exquisite theme buffets.</p>
+        <p class=" text-mgblack-200">Maagiri Hotel presents a refined selection of celebrations spaces, each thoughtfully designed to suite the unique vision and needs of our clients. Every venue promises sophistication, comfort and impeccable service.</p>
     </div>
 </div>
 
