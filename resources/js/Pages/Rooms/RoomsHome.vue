@@ -112,11 +112,11 @@ const showDetails = ref(null);
         </div>
 
         <!-- Description -->
-        <p class="text-mggrey-100 flex-grow mt-5">{{ dining.details }}</p>
+        <p class="text-mggrey-100 flex-grow mt-5 mb-6">{{ dining.details }}</p>
 
         <!-- Button -->
-        <div class="mt-6">
-          <a :href="dining.link" class="bg-mggold-100 w-full p-3 text-black block text-center mt-6">Learn More</a>
+        <div class="mt-auto">
+          <a :href="dining.link" class="bg-mggold-100 w-full p-3 text-black block text-center">Learn More</a>
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { PhForkKnife, PhCake, PhBowlFood } from "@phosphor-icons/vue";
 import MainLayout from '@/Layouts/MainLayout.vue';
 import BookingOverlay from '@/Components/BookingOverlay.vue';
+import DineCarousel from './DineCarousel.vue';
 
 const showOverlay = ref(false);
 const overlayType = ref('');
@@ -43,6 +44,7 @@ const experiences = [
         subtitle: 'MVR 220++ per person',
         description: 'Indulge in the rich and diverse flavors of India every Thursday night at our Indian Buffet. Enjoy a range of appetizers, curries, tandoori specialties and desserts, each prepared with aromatic spices and fresh ingredients.',
         image: '/images/dining/exp-indian.jpg',
+        link: 'https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0',
         has_menu: false,
     },
     {
@@ -50,6 +52,7 @@ const experiences = [
         subtitle: 'MVR 220++ per person',
         description: 'Join us every Friday night for a fusion of Thai and Chinese cuisine. Our Thai-Chinese Buffet offers a delightful mix of flavors from these two vibrant culinary traditions. Enjoy a variety of soups, stir-fries, noodles, and more, crafted with fresh ingredients and bold spices.',
         image: '/images/dining/exp-thai.jpg',
+        link: 'https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0',
         has_menu: false,
     },
     {
@@ -57,6 +60,7 @@ const experiences = [
         subtitle: 'MVR 220++ per person',
         description: 'Experience the vibrant and spicy flavors of Sri Lanka every Saturday night at our Sri Lankan Buffet. Our menu features an array of traditional dishes that showcase the islands rich culinary heritage. Enjoy a variety of curries, sambols, and rice dishes, each bursting with unique spices and flavors.',
         image: '/images/dining/exp-srilankan.jpg',
+        link: 'https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0',
         has_menu: false,
     },
     {
@@ -64,13 +68,15 @@ const experiences = [
         subtitle: 'Available Daily : 4pm – 7pm',
         description: 'Indulge in a delightful evening tea experience at Peak, where we offer tea paired with local delicacies. Whether youre winding down after a busy day or catching up with friends, our evening tea service provides the perfect setting. Peak provides a cozy and inviting atmosphere with panoramic views, making it the ideal spot to unwind.',
         image: '/images/dining/exp-evening.jpg',
+        link: 'https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0',
         has_menu: false,
     },
     {
-        title: 'Private Dinner Experience',
+        title: 'Private Dinner',
         subtitle: '',
         description: 'Experience an unforgettable private dining experience with our exclusive package, designed to create cherished memories for you and your loved ones. Our Private Dining Package includes a range of luxurious amenities and personalized services to make your special occasion truly exceptional.',
         image: '/images/dining/exp-romance.jpg',
+        link: 'https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0',
         has_menu: true,
     }
 ];
@@ -167,10 +173,10 @@ const toggleExperience = (index) => {
             <div class=" border-b-4 border-mggold-100 pb-6 w-24 mx-auto mb-10"></div>
           </div>
 
-         <p class="text-mggrey-100 flex-grow mt-5">{{ dining.details }}</p>
+         <p class="text-mggrey-100 flex-grow mt-5 mb-6">{{ dining.details }}</p>
 
-          <div class="mt-6">
-            <a :href="dining.link" class="bg-mggold-100 w-full p-3 text-black block text-center mt-6">Learn More</a>
+          <div class="mt-auto">
+            <a :href="dining.link" class="bg-mggold-100 w-full p-3 text-black block text-center">Learn More</a>
           </div>
         </div>
       </div>
@@ -189,6 +195,9 @@ const toggleExperience = (index) => {
         <p class=" text-mgblack-200">Discover exceptional dining at Maagiri Hotel, where we offer a variety of culinary experiences to satisfy every palate. Enjoy a range of options, from casual evening tea treats to exquisite theme buffets.</p>
     </div>
 </div>
+
+<DineCarousel :experiences="experiences" />
+<!-- 
 <div class=" w-full md:mx-6 mx-auto md:pb-36 pb-10">
   <div class="flex flex-nowrap gap-4 justify-start md:justify-start xl:justify-center items-start overflow-x-auto  pb-4 md:pb-0 scrollbar-hide">
 
@@ -241,7 +250,7 @@ const toggleExperience = (index) => {
   </div>
 </div>
     </div>
-</div>
+</div> -->
 </section>
 
   <BookingOverlay :isVisible="showOverlay" :type="overlayType" @close="closeOverlay" />
