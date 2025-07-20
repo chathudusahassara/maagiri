@@ -1,5 +1,5 @@
 <template>
-    <div class="relative w-full mx-auto px-2 md:px-4">
+    <div class="relative w-full mx-auto px-2 md:px-4 hidden md:block">
   
       <div 
         class="flex justify-center items-end gap-4 overflow-hidden min-h-[640px] carousel-container pb-2 touch-pan-x"
@@ -50,16 +50,54 @@
         <span class="text-sm text-gray-500">{{ selectedCard + 1 }} / {{ cards.length }}</span>
         <button @click="nextSlide" class="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition">→</button>
       </div>
+
       
-      <!-- Mobile swipe indicator -->
-      <div class="md:hidden flex items-center justify-center mt-4">
-        <div class="flex items-center gap-2 text-sm text-gray-500">
-          <span>←</span>
-          <span>Swipe to navigate</span>
-          <span>→</span>
-        </div>
-      </div>
     </div>
+
+
+         <!-- Mobile Version -->
+     <div class="md:hidden block">   
+       <div 
+         class="flex overflow-x-auto gap-4 pb-4 px-4 scrollbar-hide" 
+         ref="mobileContainer"
+         @scroll="handleMobileScroll"
+       >
+         <div 
+           v-for="(card, index) in cards" 
+           :key="`mobile-${card.id}`" 
+           class="flex-shrink-0 w-[320px] bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col"
+         >
+           <img :src="card.image" alt="" class="w-full h-48 object-cover rounded-t-xl" />
+           <div class="p-4 text-center flex flex-col flex-1">
+             <p class="text-sm italic text-gray-500 mb-2">{{ card.category }}</p>
+             <h3 class="text-lg font-semibold mb-3">{{ card.title }}</h3>
+             <p class="text-sm text-gray-600 mb-4 leading-relaxed flex-grow">{{ card.description }}</p>
+             
+             <div v-if="card.has_menu" class="mb-3">
+               <a href="https://maagirihotel.com/menu/private_dining_menu.pdf" class="text-sm font-bold text-black block">View Menu - Mvr 600/-</a>
+             </div>
+             
+             <a :href="card.link" class="bg-black text-white px-4 py-2 text-sm rounded-md hover:bg-gray-800 transition block mt-auto">
+               Book with us
+             </a>
+                        </div>
+           </div>
+         </div>
+         
+         <!-- Mobile Pagination -->
+         <div class="flex justify-center items-center gap-2 mt-4 mb-2">
+           <div class="flex gap-1">
+             <div 
+               v-for="(card, index) in cards" 
+               :key="`dot-${index}`"
+               class="w-2 h-2 rounded-full transition-all duration-300"
+               :class="currentMobileCard === index ? 'bg-black' : 'bg-gray-300'"
+             ></div>
+           </div>
+         </div>
+         <div class="text-xs text-gray-500 text-center">{{ currentMobileCard + 1 }} / {{ cards.length }}</div>
+       </div>
+    
   </template>
   
   <script setup>
@@ -92,6 +130,10 @@ const props = defineProps({
   const touchStartX = ref(0)
   const touchEndX = ref(0)
   const isDragging = ref(false)
+  
+  // Mobile pagination
+  const mobileContainer = ref(null)
+  const currentMobileCard = ref(0)
   
   const nextSlide = () => {
     selectedCard.value = (selectedCard.value + 1) % totalSlides
@@ -202,6 +244,27 @@ const props = defineProps({
       })
     }
     return visible
+  }
+  
+  const getCurrentCardIndex = () => {
+    if (!mobileContainer.value) return 0
+    
+    const container = mobileContainer.value
+    const cardWidth = 320 + 16 // card width + gap
+    const scrollLeft = container.scrollLeft
+    const containerWidth = container.clientWidth
+    
+    // Calculate which card is most centered
+    const centerPosition = scrollLeft + (containerWidth / 2)
+    const cardIndex = Math.round(centerPosition / cardWidth)
+    
+    return Math.max(0, Math.min(cardIndex, cards.length - 1))
+  }
+  
+  const handleMobileScroll = () => {
+    if (mobileContainer.value) {
+      currentMobileCard.value = getCurrentCardIndex()
+    }
   }
   </script>
   
