@@ -1,7 +1,12 @@
 <template>
-    <div class="relative w-full mx-auto px-4">
+    <div class="relative w-full mx-auto px-0 md:px-4">
   
-      <div class="flex justify-center items-end gap-4 overflow-hidden min-h-[640px] carousel-container pb-2 ">
+      <div 
+        class="flex justify-center items-end gap-4 overflow-hidden min-h-[640px] carousel-container pb-2 touch-pan-x"
+        @touchstart="handleTouchStart"
+        @touchmove="handleTouchMove"
+        @touchend="handleTouchEnd"
+      >
         <div
           v-for="(card, index) in getVisibleItems()"
           :key="`${card.id}-${card.index}`"
@@ -40,10 +45,19 @@
         </div>
       </div>
   
-      <div class="flex items-center justify-center mt-8 gap-4">
+      <div class="hidden md:flex items-center justify-center mt-8 gap-4">
         <button @click="prevSlide" class="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition">←</button>
         <span class="text-sm text-gray-500">{{ selectedCard + 1 }} / {{ cards.length }}</span>
         <button @click="nextSlide" class="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition">→</button>
+      </div>
+      
+      <!-- Mobile swipe indicator -->
+      <div class="md:hidden flex items-center justify-center mt-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <span>←</span>
+          <span>Swipe to navigate</span>
+          <span>→</span>
+        </div>
       </div>
     </div>
   </template>
@@ -73,6 +87,11 @@ const props = defineProps({
   
   const selectedCard = ref(2)
   const totalSlides = cards.length
+  
+  // Touch gesture variables
+  const touchStartX = ref(0)
+  const touchEndX = ref(0)
+  const isDragging = ref(false)
   
   const nextSlide = () => {
     selectedCard.value = (selectedCard.value + 1) % totalSlides
@@ -120,6 +139,37 @@ const props = defineProps({
         }
       }
     }, 150)
+  }
+  
+  // Touch gesture handlers
+  const handleTouchStart = (e) => {
+    touchStartX.value = e.touches[0].clientX
+    isDragging.value = true
+  }
+  
+  const handleTouchMove = (e) => {
+    if (!isDragging.value) return
+    e.preventDefault()
+  }
+  
+  const handleTouchEnd = (e) => {
+    if (!isDragging.value) return
+    
+    touchEndX.value = e.changedTouches[0].clientX
+    isDragging.value = false
+    
+    const swipeDistance = touchStartX.value - touchEndX.value
+    const minSwipeDistance = 50 // Minimum distance for a swipe
+    
+    if (Math.abs(swipeDistance) > minSwipeDistance) {
+      if (swipeDistance > 0) {
+        // Swiped left - next slide
+        nextSlide()
+      } else {
+        // Swiped right - previous slide
+        prevSlide()
+      }
+    }
   }
   
   const getVisibleItems = () => {
