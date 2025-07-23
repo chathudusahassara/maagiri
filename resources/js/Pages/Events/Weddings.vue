@@ -88,7 +88,7 @@ const openWhatsapp = () => {
         <h2 class=" text-5xl mb-10 text-white font-freigtNeo ">Weddings & Celebrations</h2>
         <div class="border-b-4 border-mggold-100 w-16"></div>
         </div>
-        <p>Overlooking the ocean, Maagiri Hotel offers you ideal spaces for your gatherings and celebrations. A special aspect, the hotel being on the street where the arrival jetties are located provides your guests easy access to the event.</p>
+        <p>Overlooking the ocean, Maagiri Hotel offers you ideal spaces for your gatherings and celebrations. A beautifully curated space paired with warm hospitality ensures the perfect setting for long lasting memories.</p>
         <p class=" mt-4">Whether it is an intimate wedding or a proud celebration, Maagiri Hotel provides its customers a joyous occasion, complete with all amenities such an event needs with a warm ambience and efficient service.</p>
     </div>
 </div>
