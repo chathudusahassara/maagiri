@@ -128,7 +128,7 @@ const openWhatsapp = () => {
           <h2 class=" text-2xl font-bold text-center text-mggrey-100">{{ dining.name }}</h2>
           <div class=" border-b-4 border-mggold-100 pb-6 w-24 mx-auto mb-10"></div>
           <p class=" text-mggrey-100">{{ dining.details }}</p>
-          <a href="https://api.whatsapp.com/send/?phone=9607998484&text&type=phone_number&app_absent=0" class=" bg-mggold-100 text-black mb-6 mt-12 p-3">Talk to us</a>
+          <a href="https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0" class=" bg-mggold-100 text-black mb-6 mt-12 p-3">Talk to us</a>
         </div>
       </div>
     </div>

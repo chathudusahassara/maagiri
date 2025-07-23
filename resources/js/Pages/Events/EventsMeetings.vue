@@ -143,7 +143,7 @@ const openWhatsapp = () => {
 
         <!-- Button -->
         <div class="mt-6">
-          <a href="https://api.whatsapp.com/send/?phone=9607998484&text&type=phone_number&app_absent=0" class="bg-mggold-100 w-full p-3 text-black block text-center mt-6">Talk to us</a>
+          <a href="https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0" class="bg-mggold-100 w-full p-3 text-black block text-center mt-6">Talk to us</a>
         </div>
       </div>
     </div>
