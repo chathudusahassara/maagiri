@@ -35,12 +35,55 @@
             <div id="pageContentBody" v-html="pageContent.body"></div>
         </div>
 
-        <div class=" flex justify-center mb-12">
-            <ul class="flex gap-8 text-mggold-100">
-                <li><a class="hover:underline" :href="pageContent.file">MENU</a></li>
-                <li><a class="hover:underline" href="#openingHours">OPENING HOURS</a></li>
-            </ul>
+
+        <div v-if="pageContent.name == 'Faru'">
+          <h2 class="text-3xl font-freigtNeo mb-8">Hours</h2>
+          <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
+            <div>BREAKFAST</div>
+            <div>DAILY 7 AM - 11 AM</div>
+          </div>
+          <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
+            <div>LUNCH</div>
+            <div>DAILY 12 PM - 3 PM</div>
+          </div>
+          <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
+            <div class="text-left">THEME BUFFET NIGHTS</div>
+            <div class="text-right">
+              <p class="mb-2">MALDIVIAN BUFFET<br> 7-10:30 PM</p>
+              <p class="mb-2">INDIAN BUFFET<br> 7-10:30 PM</p>
+              <p class="mb-2">THAI - CHINESE BUFFET<br> 7-10:30 PM</p>
+              <p class="mb-2">SRILANKAN BUFFET<br> 7-10:30 PM</p>
+            </div>
+          </div>
         </div>
+
+        <div v-if="pageContent.name == 'Coffee Curve'">
+          <h2 class="text-3xl font-freigtNeo mb-8">Hours</h2>
+          <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
+            <div>DAILY</div>
+            <div> 7 AM - 11 AM</div>
+          </div>
+        </div>
+
+        <div v-if="pageContent.name == 'Peak'">
+          <h2 class="text-3xl font-freigtNeo mb-8">Hours</h2>
+          <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
+            <div>EVENGING TEA</div>
+            <div> 4 PM - 7 PM</div>
+          </div>
+          <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
+            <div>DINNER</div>
+            <div> 7 PM - 12 AM</div>
+          </div>
+        </div>
+
+
+        <div class="mb-12">
+          <h2 class="text-3xl font-freigtNeo mb-8">
+            <a class="hover:underline underline-offset-4" :href="pageContent.file">View Menu</a>
+          </h2>
+        </div>
+
 
         <!-- Booking Section -->
         <BookingBar />
@@ -81,15 +124,7 @@
         </div>
 
 
-        <div id="openingHours" class=" text-center mt-8">
-            <h2 class="text-2xl font-freigtNeo">Opening Hours</h2>
-            <div class="flex justify-center mt-3">
-                <ul class="md:flex gap-8 text-mggrey-200">
-                    <li>Monday - Friday / 10:00 AM - 10:00 PM</li>
-                    <li>Saturday - Sunday / 10:00 AM - 10:00 PM</li>
-                </ul>
-            </div>
-        </div>
+
 
         <!-- Enquire Button -->
         <div class="mt-12 flex justify-center">

@@ -40,32 +40,45 @@ const dinings = [
 
 const experiences = [
     {
-        title: 'Indian Buffet – Every Thursday Night',
-        subtitle: 'MVR 220++ per person',
+        title: 'Indian Buffet',
+        category: 'Theme Buffet',
+        subtitle: 'Thur Night | Mvr 220++ | 7-10.30 pm',
         description: 'Indulge in the rich and diverse flavors of India every Thursday night at our Indian Buffet. Enjoy a range of appetizers, curries, tandoori specialties and desserts, each prepared with aromatic spices and fresh ingredients.',
         image: '/images/dining/exp-indian.jpg',
         link: 'https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0',
         has_menu: false,
     },
     {
-        title: 'Thai Chinese Buffet - Every Fri Night',
-        subtitle: 'MVR 220++ per person',
+        title: 'Thai Chinese Buffet',
+        category: 'Theme Buffet',
+        subtitle: 'Fri Night | Mvr 220++ | 7-10.30 pm',
         description: 'Join us every Friday night for a fusion of Thai and Chinese cuisine. Our Thai-Chinese Buffet offers a delightful mix of flavors from these two vibrant culinary traditions. Enjoy a variety of soups, stir-fries, noodles, and more, crafted with fresh ingredients and bold spices.',
         image: '/images/dining/exp-thai.jpg',
         link: 'https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0',
         has_menu: false,
     },
     {
-        title: 'Sri Lankan Buffet - Every Sat Night',
-        subtitle: 'MVR 220++ per person',
+        title: 'Sri Lankan Buffet',
+        category: 'Theme Buffet',
+        subtitle: 'Sat Night | Mvr 220++ | 7-10.30 pm',
         description: 'Experience the vibrant and spicy flavors of Sri Lanka every Saturday night at our Sri Lankan Buffet. Our menu features an array of traditional dishes that showcase the islands rich culinary heritage. Enjoy a variety of curries, sambols, and rice dishes, each bursting with unique spices and flavors.',
         image: '/images/dining/exp-srilankan.jpg',
         link: 'https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0',
         has_menu: false,
     },
     {
+        title: 'Maldivian Buffet',
+        category: 'Theme Buffet',
+        subtitle: 'Wed Night | Mvr 220++ | 7-11 pm',
+        description: 'Maldivian Night is a celebration of culture, flavor and community in the heart of the city. Whether you are a local rediscovering cherished tastes, or a visitor exploring the rich culinary heritage of the Maldives, this unforgettable evening promises warm hospitality and authentic Maldivian dishes.',
+        image: '/images/dining/exp-romance.jpg',
+        link: 'https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0',
+        has_menu: false,
+    },
+    {
         title: 'Evening Tea at Peak',
-        subtitle: 'Available Daily : 4pm – 7pm',
+        category: 'Tea Time',
+        subtitle: 'Daily : 4pm – 7pm',
         description: 'Indulge in a delightful evening tea experience at Peak, where we offer tea paired with local delicacies. Whether youre winding down after a busy day or catching up with friends, our evening tea service provides the perfect setting. Peak provides a cozy and inviting atmosphere with panoramic views, making it the ideal spot to unwind.',
         image: '/images/dining/exp-evening.jpg',
         link: 'https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0',
@@ -73,12 +86,13 @@ const experiences = [
     },
     {
         title: 'Private Dinner',
-        subtitle: '',
+        category: 'Private Dining',
+        subtitle: 'Available Daily : 4pm – 7pm',
         description: 'Experience an unforgettable private dining experience with our exclusive package, designed to create cherished memories for you and your loved ones. Our Private Dining Package includes a range of luxurious amenities and personalized services to make your special occasion truly exceptional.',
         image: '/images/dining/exp-romance.jpg',
         link: 'https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0',
         has_menu: true,
-    }
+    },
 ];
 
 const expandedExperience = ref(null);

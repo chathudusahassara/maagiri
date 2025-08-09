@@ -22,8 +22,9 @@
             <div v-if="card.position === 0" class="bg-white h-full" :key="'active-' + card.id">
               <img :src="card.image" alt="" class="w-full h-48 object-cover" />
               <div class="p-8 text-center">
-                <p class="text-sm italic text-gray-500 mb-2">{{ card.category }}</p>
-                <h3 class="text-2xl font-light tracking-widest mb-4">{{ card.title }}</h3>
+                <p class="text-sm text-gray-500 mb-2">{{ card.category }}</p>
+                <h3 class="text-2xl font-light tracking-widest mb-1">{{ card.title }}</h3>
+                <p class="text-sm text-gray-600 mb-5">{{ card.subtitle }}</p>
                 <div class="w-8 h-px bg-black mx-auto mb-6"></div>
                 <p class="text-sm text-gray-600 leading-relaxed mb-5">{{ card.description }}</p>
                 <div v-if="card.has_menu">
@@ -36,8 +37,9 @@
             <div v-else class="bg-white h-full" :key="'inactive-' + card.id">
               <img :src="card.image" alt="" class="w-full h-72 object-cover" />
               <div class="p-6 text-center">
-                <p class="text-sm italic text-gray-500 mb-2">{{ card.category }}</p>
-                <h3 class="text-lg tracking-widest mb-2">{{ card.title }}</h3>
+                <p class="text-sm text-gray-500 mb-2">{{ card.category }}</p>
+                <h3 class="text-lg tracking-widest mb-1">{{ card.title }}</h3>
+                <p class="text-sm text-gray-600 mb-5">{{ card.subtitle }}</p>
                 <div class="w-6 h-px bg-gray-300 mx-auto"></div>
               </div>
             </div>
@@ -69,8 +71,9 @@
          >
            <img :src="card.image" alt="" class="w-full h-48 object-cover rounded-t-xl" />
            <div class="p-4 text-center flex flex-col flex-1">
-             <p class="text-sm italic text-gray-500 mb-2">{{ card.category }}</p>
-             <h3 class="text-lg font-semibold mb-3">{{ card.title }}</h3>
+             <p class="text-sm text-gray-500 mb-2">{{ card.category }}</p>
+             <h3 class="text-lg font-semibold mb-2">{{ card.title }}</h3>
+             <p class="text-sm text-gray-600 mb-4">{{ card.subtitle }}</p>
              <p class="text-sm text-gray-600 mb-4 leading-relaxed flex-grow">{{ card.description }}</p>
              
              <div v-if="card.has_menu" class="mb-3">
@@ -115,8 +118,9 @@ const props = defineProps({
   const cards = props.experiences.map((experience, index) => ({
     id: index + 1,
     image: experience.image,
-    category: 'Experience',
+    category: experience.category,
     title: experience.title,
+    subtitle: experience.subtitle,
     description: experience.description,
     has_menu: experience.has_menu,
   }))   

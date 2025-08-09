@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { PhForkKnife, PhCake, PhBowlFood } from "@phosphor-icons/vue";
 import MainLayout from '@/Layouts/MainLayout.vue';
 import BookingOverlay from '@/Components/BookingOverlay.vue';
+import BookingBar from '@/Pages/BookingBar.vue';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 
@@ -59,7 +60,7 @@ const showDetails = ref(null);
   </div>
 
   <div class=" w-full bg-mgblack-100 ">
-    <div class=" w-full px-10 md:px-0 md:w-5/12 mx-auto text-center pt-36 pb-52 text-mggrey-100">
+    <div class=" w-full px-10 md:px-0 md:w-5/12 mx-auto text-center pt-36 pb-20 text-mggrey-100">
         <div class=" w-auto flex-col flex items-center mb-16">
         <h2 class=" text-5xl mb-10 text-white font-freigtNeo ">Accomodation</h2>
         <div class="border-b-4 border-mggold-100 w-16"></div>
@@ -69,6 +70,11 @@ const showDetails = ref(null);
 
 </p>
     </div>
+
+    <div class=" w-full bg-mgblack-100 mx-auto px-10 md:px-0 md:w-8/12 pb-10">
+      <BookingBar />
+    </div>
+    
   </div>
 
   <section>

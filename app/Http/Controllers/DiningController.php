@@ -29,6 +29,8 @@ class DiningController extends Controller
         $data['pageContent'] = $getPageContent;
         $data['pageMedia'] = $getPageMedia;
         $data['page'] = $getPage;
+        
+        
 
         return Inertia::render('Dining/Restaurants', $data);
     }
