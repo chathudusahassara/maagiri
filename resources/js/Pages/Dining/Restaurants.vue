@@ -36,52 +36,19 @@
         </div>
 
 
-        <div v-if="pageContent.name == 'Faru'">
-          <h2 class="text-3xl font-freigtNeo mb-8">Hours</h2>
-          <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
-            <div>BREAKFAST</div>
-            <div>DAILY 7 AM - 11 AM</div>
-          </div>
-          <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
-            <div>LUNCH</div>
-            <div>DAILY 12 PM - 3 PM</div>
-          </div>
-          <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
-            <div class="text-left">THEME BUFFET NIGHTS</div>
-            <div class="text-right">
-              <p class="mb-2">MALDIVIAN BUFFET<br> 7-10:30 PM</p>
-              <p class="mb-2">INDIAN BUFFET<br> 7-10:30 PM</p>
-              <p class="mb-2">THAI - CHINESE BUFFET<br> 7-10:30 PM</p>
-              <p class="mb-2">SRILANKAN BUFFET<br> 7-10:30 PM</p>
-            </div>
-          </div>
-        </div>
-
-        <div v-if="pageContent.name == 'Coffee Curve'">
-          <h2 class="text-3xl font-freigtNeo mb-8">Hours</h2>
-          <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
-            <div>DAILY</div>
-            <div> 7 AM - 11 AM</div>
-          </div>
-        </div>
-
-        <div v-if="pageContent.name == 'Peak'">
-          <h2 class="text-3xl font-freigtNeo mb-8">Hours</h2>
-          <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
-            <div>EVENGING TEA</div>
-            <div> 4 PM - 7 PM</div>
-          </div>
-          <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
-            <div>DINNER</div>
-            <div> 7 PM - 12 AM</div>
-          </div>
-        </div>
+       
 
 
         <div class="mb-12">
-          <h2 class="text-3xl font-freigtNeo mb-8">
-            <a class="hover:underline underline-offset-4" :href="pageContent.file">View Menu</a>
-          </h2>
+          <div class="flex justify-center gap-8">
+            <h2 class="text-xl font-freigtNeo mb-8">
+              <a class="hover:underline underline-offset-4 text-mggold-100" :href="pageContent.file">MENU</a>
+            </h2>
+            <h2 class="text-xl font-freigtNeo mb-8">
+              <a class="hover:underline underline-offset-4 text-mggold-100" :href="'#openHours'">OPENING HOURS</a>
+            </h2>
+          </div>
+          
         </div>
 
 
@@ -124,6 +91,59 @@
         </div>
 
 
+        <section id="openHours" class="pt-16 pb-24 px-4 w-full md:w-7/12 mx-auto text-center">
+          <div v-if="pageContent.name == 'Faru'">
+    <h2 class="text-3xl font-freigtNeo mb-8">Opening Hours</h2>
+    <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
+      <div>BREAKFAST</div>
+      <div>DAILY 7 AM - 11 AM</div>
+    </div>
+    <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
+      <div>LUNCH</div>
+      <div>DAILY 12 PM - 3 PM</div>
+    </div>
+    <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
+      <div class="text-left">THEME BUFFET NIGHTS</div>
+      <div class="text-right"></div>
+    </div>
+    <div class="flex justify-between border-dashed border-t border-mggrey-100 pt-4 pb-8">
+      <div class="text-left pl-5 text-sm">Maldivian Buffet</div>
+      <div class="text-right text-sm">7-10:30 PM</div>
+    </div>
+    <div class="flex justify-between border-dashed border-t border-mggrey-100 pt-4 pb-8">
+      <div class="text-left pl-5 text-sm">Indian Buffet</div>
+      <div class="text-right text-sm">7-10:30 PM</div>
+    </div>
+    <div class="flex justify-between border-dashed border-t border-mggrey-100 pt-4 pb-8">
+      <div class="text-left pl-5 text-sm">Thai - Chinese Buffet</div>
+      <div class="text-right text-sm">7-10:30 PM</div>
+    </div>
+    <div class="flex justify-between border-dashed border-t border-mggrey-100 pt-4 pb-8">
+      <div class="text-left pl-5 text-sm">Srilankan Buffet</div>
+      <div class="text-right text-sm">7-10:30 PM</div>
+    </div>
+  </div>
+
+  <div v-if="pageContent.name == 'Coffee Curve'">
+    <h2 class="text-3xl font-freigtNeo mb-8">Opening Hours</h2>
+    <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
+      <div>DAILY</div>
+      <div> 7 AM - 11 AM</div>
+    </div>
+  </div>
+
+  <div v-if="pageContent.name == 'Peak'">
+    <h2 class="text-3xl font-freigtNeo mb-8">Opening Hours</h2>
+    <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
+      <div>EVENGING TEA</div>
+      <div> 4 PM - 7 PM</div>
+    </div>
+    <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
+      <div>DINNER</div>
+      <div> 7 PM - 12 AM</div>
+    </div>
+  </div>
+        </section>
 
 
         <!-- Enquire Button -->
