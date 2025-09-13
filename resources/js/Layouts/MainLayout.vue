@@ -18,8 +18,8 @@ const dropdownTimeout = ref(null);
 const activeDropdown = ref(null);
 const menuItems = ref([]);
 
-//get app url from env
-const appUrl = import.meta.env.VITE_APP_URL;
+//get app url from env with fallback
+const appUrl = import.meta.env.VITE_APP_URL || window.location.origin;
 
 const showDropdown = (index) => {
       clearTimeout(dropdownTimeout.value);
