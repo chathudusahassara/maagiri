@@ -87,7 +87,7 @@
                                 <li class="nav-item">
                                     @if($m->has_submenu)
                                     <div class="dropdown">
-                                        <a class="nav-link dropdown-toggle" href="{{ url($m->link_name) }}" >{{ $m->name }}</a>
+                                        <a class="nav-link dropdown-toggle" href="{{ url((string)$m->link_name) }}" >{{ $m->name }}</a>
                                         <div class="dropdown-menu">
                                             @foreach($submenu as $sb)
                                                 @if($sb->parent_id == $m->id)
@@ -238,7 +238,7 @@
                                     <ul style="margin:0; padding:0;" class="collapse" id="{{ $m->name }}">
                                     @foreach($submenu as $sb)
                                         @if($sb->parent_id == $m->id)
-                                            <li><a href="#" href="">{{ $sb->name }}</a></li>
+                                            <li><a href="{{ url((string)$sb->link) }}">{{ $sb->name }}</a></li>
                                         @endif
                                     @endforeach
                                     </ul>
