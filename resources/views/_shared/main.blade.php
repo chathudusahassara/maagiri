@@ -91,7 +91,7 @@
                                         <div class="dropdown-menu">
                                             @foreach($submenu as $sb)
                                                 @if($sb->parent_id == $m->id)
-                                                    <a class="dropdown-item" href="{{ url($sb->link) }}">{{ $sb->name }}</a>
+                                                    <!-- <a class="dropdown-item" href="{{ url($sb->link) }}">{{ $sb->name }}</a> -->
                                                 @endif
                                             @endforeach
                                         </div>
