@@ -108,19 +108,19 @@
     </div>
     <div class="flex justify-between border-dashed border-t border-mggrey-100 pt-4 pb-8">
       <div class="text-left pl-5 text-sm">Maldivian Buffet</div>
-      <div class="text-right text-sm">7-10:30 PM</div>
+      <div class="text-right text-sm">Every Wednesday - 7-10:30 PM</div>
     </div>
     <div class="flex justify-between border-dashed border-t border-mggrey-100 pt-4 pb-8">
       <div class="text-left pl-5 text-sm">Indian Buffet</div>
-      <div class="text-right text-sm">7-10:30 PM</div>
+      <div class="text-right text-sm">Every Thursday - 7-10:30 PM</div>
     </div>
     <div class="flex justify-between border-dashed border-t border-mggrey-100 pt-4 pb-8">
       <div class="text-left pl-5 text-sm">Thai - Chinese Buffet</div>
-      <div class="text-right text-sm">7-10:30 PM</div>
+      <div class="text-right text-sm">Every Friday - 7-10:30 PM</div>
     </div>
     <div class="flex justify-between border-dashed border-t border-mggrey-100 pt-4 pb-8">
       <div class="text-left pl-5 text-sm">Srilankan Buffet</div>
-      <div class="text-right text-sm">7-10:30 PM</div>
+      <div class="text-right text-sm">Every Saturday - 7-10:30 PM</div>
     </div>
   </div>
 
@@ -135,7 +135,7 @@
   <div v-if="pageContent.name == 'Peak'">
     <h2 class="text-3xl font-freigtNeo mb-8">Opening Hours</h2>
     <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">
-      <div>EVENGING TEA</div>
+      <div>EVENING TEA</div>
       <div> 4 PM - 7 PM</div>
     </div>
     <div class="flex justify-between border-t border-mggrey-100 pt-4 pb-8">

@@ -42,7 +42,7 @@ const experiences = [
     {
         title: 'Private Dining',
         category: 'Private Dining',
-        subtitle: 'Available Daily : 4pm – 7pm',
+        // subtitle: 'Available Daily : 4pm – 7pm',
         description: 'Experience an unforgettable private dining experience with our exclusive package, designed to create cherished memories for you and your loved ones. Our Private Dining Package includes a range of luxurious amenities and personalized services to make your special occasion truly exceptional.',
         image: '/images/dining/exp-romance.jpg',
         link: 'https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0',
@@ -60,7 +60,7 @@ const experiences = [
     {
         title: 'Thai - Chinese Buffet',
         category: 'Theme Buffet',
-        subtitle: 'Fri Night | Mvr 220++',
+        subtitle: 'Friday Night | Mvr 220++',
         description: 'Join us every Friday night for a fusion of Thai and Chinese cuisine. Our Thai-Chinese Buffet offers a delightful mix of flavors from these two vibrant culinary traditions. Enjoy a variety of soups, stir-fries, noodles, and more, crafted with fresh ingredients and bold spices.',
         image: '/images/dining/exp-thai.jpg',
         link: 'https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0',
@@ -150,11 +150,11 @@ const openWhatsapp = () => {
 
 <template>
 <MainLayout>
-  <div class="relative h-[60vh] w-full">
+  <div class="relative h-[48vh] w-full">
     <img id="bbImage" src="/images/pages/bg-dining.jpg" class="object-cover w-full h-full" />
     <div class=" h-96 w-full   absolute bottom-0 z-10"></div>
     <div id="shortcutMenu" class="absolute z-20 bottom-5 right-5 bg-mgblack-100 text-mggrey-100 w-full md:w-auto text-left p-4 md:px-8 rounded-md ">
-      <h2 class=" text-xl font-freigtNeo py-3 pl-2">We can help plan your dining experiences</h2>
+      <h2 class=" text-xl font-freigtNeo py-3 pl-2">We can help plan your <br> dining experiences</h2>
       <div class="flex justify-start m-2 gap-3 items-left">
         <button @click="openWhatsapp" id="bookDinner" class="border border-gray-200 border-opacity-40 rounded-md p-5 flex flex-col items-center hover:shadow-2xl">
           <PhForkKnife :size="32" class=" text-mggold-100" />

@@ -57,7 +57,7 @@ const openWhatsapp = () => {
 
 <template>
 <MainLayout>
-  <div class="relative h-[80vh] w-full">
+  <div class="relative h-[48vh] w-full">
     <img id="bbImage" src="/images/pages/events-bg.jpg" class="object-cover w-full h-full" />
     <div class=" h-96 w-full   absolute bottom-0 z-10"></div>
     <div id="shortcutMenu" class="absolute z-20 bottom-5 right-5 bg-mgblack-100 text-mggrey-100 w-full md:w-auto text-left p-4 md:px-8 rounded-md ">

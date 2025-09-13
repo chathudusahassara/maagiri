@@ -53,7 +53,7 @@ const showDetails = ref(null);
 
 <template>
 <MainLayout>
-  <div class="relative h-[80vh] w-full">
+  <div class="relative h-[48vh] w-full">
     <img id="bbImage" src="https://maagirihotel.com/storage/d/9VKmqAdT0D8JdM5zk0arPnnJNW9s1MMH9hXvcHtS.jpg" class="object-cover w-full h-full" />
     <div class=" h-96 w-full   absolute bottom-0 z-10"></div>
 
