@@ -122,12 +122,12 @@ const openWhatsapp = () => {
 
   <div class=" w-full mx-auto px-8 mb-20 ">
     <div class=" w-full lg:flex gap-6 ">
-      <div class=" mb-10 shadow-md bg-mgblack-100 w-full" v-for="dining in dinings" :key="dining.name">
+      <div class=" mb-10 shadow-md bg-mgblack-100 w-full flex flex-col" v-for="dining in dinings" :key="dining.name">
         <img id="bbImage" :src="dining.image" class="object-cover aspect-auto w-full " />
-        <div class="px-5 mt-8 text-center flex flex-col">
+        <div class="px-5 mt-8 text-center flex flex-col flex-grow">
           <h2 class=" text-2xl font-bold text-center text-mggrey-100">{{ dining.name }}</h2>
           <div class=" border-b-4 border-mggold-100 pb-6 w-24 mx-auto mb-10"></div>
-          <p class=" text-mggrey-100">{{ dining.details }}</p>
+          <p class=" text-mggrey-100 flex-grow">{{ dining.details }}</p>
           <a href="https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0" class=" bg-mggold-100 text-black mb-6 mt-12 p-3">Talk to us</a>
         </div>
       </div>
