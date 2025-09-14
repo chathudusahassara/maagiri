@@ -77,7 +77,7 @@
              <p class="text-sm text-gray-600 mb-4 leading-relaxed flex-grow">{{ card.description }}</p>
              
              <div v-if="card.has_menu" class="mb-3">
-               <a href="https://maagirihotel.com/menu/private_dining_menu.pdf" class="text-sm font-bold text-black block">View Menu - Mvr 600/-</a>
+               <a href="https://maagirihotel.com/menu/private_dining_menu.pdf" class="text-sm font-bold text-black block">Menu</a>
              </div>
              
              <a href="https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0" class="bg-black text-white px-4 py-2 text-sm rounded-md hover:bg-gray-800 transition block mt-auto">

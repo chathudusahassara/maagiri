@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class HomeController extends Controller
 {
@@ -19,6 +20,8 @@ class HomeController extends Controller
         $data['banner'] = (new PageMediaController)->getPageMedia(1,2);
         $data['offers'] = (new OffersController)->get_offers();
         return view('home.index', $data);
+
+        //return Inertia::render('Home', $data);
     }
 
 
