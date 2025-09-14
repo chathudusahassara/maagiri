@@ -95,8 +95,8 @@ class ContactController extends Controller
             'g-recaptcha-response' => ['required', new ReCaptcha]
         );
 
-        // Mail::to('info@maagirihotel.com')->send(new SendEnquire($enquireData));
-        Mail::to('shamoonis@gmail.com')->send(new SendEnquire($enquireData));
+        Mail::to('info@maagirihotel.com')->send(new SendEnquire($enquireData));
+        // Mail::to('shamoonis@gmail.com')->send(new SendEnquire($enquireData));
 
         return response()->json(['message' => 'Enquiry sent successfully']);
     }//
