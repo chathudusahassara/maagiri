@@ -28,7 +28,7 @@
                 <div class="w-8 h-px bg-black mx-auto mb-6"></div>
                 <p class="text-sm text-gray-600 leading-relaxed mb-5">{{ card.description }}</p>
                 <div v-if="card.has_menu">
-                 <a href="https://maagirihotel.com/menu/private_dining_menu.pdf" class=" w-full mb-8 font-bold text-black block text-center">View Menu - Mvr 600/-</a>
+                 <a href="https://maagirihotel.com/menu/private_dining_menu.pdf" class=" w-full mb-8 font-bold text-black block text-center">Menu</a>
                 </div>
                 <a href="https://api.whatsapp.com/send/?phone=9607228484&text&type=phone_number&app_absent=0" class="bg-black text-white px-6 py-2 text-sm tracking-wide hover:bg-gray-800 transition">Book with us</a>
               </div>
