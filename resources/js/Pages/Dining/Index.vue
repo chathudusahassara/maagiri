@@ -174,7 +174,8 @@ const openWhatsapp = () => {
         <h2 class=" text-5xl mb-10 text-white font-freigtNeo ">Dining</h2>
         <div class="border-b-4 border-mggold-100 w-16"></div>
         </div>
-        <p>Experience the pinnacle of fine dining at Four Seasons Hotel London at Park Lane, where luxury and culinary excellence converge in the heart of Mayfair. At our renowned Park Lane restaurant, Pavyllon, French cuisine crafted by our talented chefs offers an exquisite dining experience.</p>
+        <p>Indulge in an exceptional culinary journey across our three distinctive dining venues. At our elegant lobby coffee shop - Coffee Curve, savor freshly brewed coffees, delicate pastries, and light bites in a refined yet welcoming ambiance. Elevate your evenings at the rooftop restaurant, where fine cuisine is paired with breathtaking city views for an unforgettable dining experience. </p>
+        <p class="mt-4">For a more lavish affair, our signature main restaurant presents an opulent buffet of international and local delicacies, crafted to delight every palate. Each venue is thoughtfully designed to blend exquisite flavors with an atmosphere of sophistication.</p>
     </div>
   </div>
   
