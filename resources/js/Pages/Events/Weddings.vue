@@ -26,25 +26,25 @@ const dinings = [
   {
     name:'Muraka Maalam',
     details: 'Located at the terrace of Maagiri Hotel, Muraka Maalam provides a striking and unforgettable setting for events, soaring over 60sqm.',
-    image: '/images/pages/peak-rest-ed.jpg',
+    image: '/images/pages/murakamaalam_3-pg.jpg',
     link: '/peak'
   },
   {
     name:'Peak - 9th Floor',
     details: 'Floor to ceiling windows that overlook the unobstructed seaview, this venue is ideal for celebrations or weddings.',
-    image: '/images/pages/faru-rest-ed.jpg',
+    image: '/images/pages/peak9floor-pg.jpg',
     link: '/faru'
   },
   {
     name:'Peak - Terrace',
     details: 'A uniquely atmospheric celebrations space overlooking the seaview which can accommodate up to 150 pax.',
-    image: '/images/pages/coffee-curve-ed.jpg',
+    image: '/images/pages/peakterrace-pg.jpg',
     link: '/coffee_curve'
   },
   {
     name:'Faru',
     details: 'Nestled in the heart of Male’ , our restaurant offers a perfect blend of modern elegance and warm hospitality.',
-    image: '/images/pages/coffee-curve-ed.jpg',
+    image: '/images/pages/faru-pg.jpg',
     link: '/coffee_curve'
   }
 ];

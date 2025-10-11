@@ -20,13 +20,13 @@ const dinings = [
   {
     name:'Weddings & Celebrations',
     details: 'A fantastic terrace with panoramic views of the ocean, Peak with a lounge as well lends an air of exclusivity with unpretentious service.',
-    image: '/images/pages/peak-rest-ed.jpg',
+    image: '/images/pages/weddings-bg-pg.jpeg',
     link: '/events/weddings'
   },
   {
     name:'Events & Meetings',
     details: 'Offering choices of semi-fine dining with stylish buffets, express meals and a la carte dishes.',
-    image: '/images/pages/faru-rest-ed.jpg',
+    image: '/images/pages/murakamaalam_2.jpg',
     link: '/events/meetings'
   }
 ];
