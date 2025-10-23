@@ -175,7 +175,7 @@
                          </div>
 
                          <div class="col-md-9 map" style="background:#ccc; padding:0; ">
-                                <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJgTuQEP5-PzsREzJmSzq4Q_I&key=AIzaSyDG22NogYbGOynPb9rb2G_qSnNkAWe1bB4" allowfullscreen></iframe>
+                                <iframe width="100%" height="100%" frameborder="0" style="border:0" src="##" allowfullscreen></iframe>
                          </div>
                      </div>
                  </div>
